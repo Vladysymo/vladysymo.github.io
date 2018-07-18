@@ -4,6 +4,7 @@ const menu2 = document.querySelector('.menu')
 const closeMenu = document.querySelector('.close-menu')
 
 const floatingMenuBtn = document.querySelector('.floatingMenuBtn')
+const floatWrapper    = document.querySelector('.float_btn')
 
 menu.addEventListener('click', openMenu)
 floatingMenuBtn.addEventListener('click', openMenu)
@@ -23,15 +24,19 @@ function closingMenu() {
 
 site.addEventListener('scroll', ()=>{
 	if (site.scrollTop >= 200) {
-		floatingMenuBtn.classList.add('showed')
+		floatWrapper.classList.add('showed')
 	} else {
-		floatingMenuBtn.classList.remove('showed')
+		floatWrapper.classList.remove('showed')
 	}
 })
 
 
 
 //jq soft scroll
+let toAbout     = document.querySelector('#about').getBoundingClientRect().top
+let toSkills    = document.querySelector('#skills').getBoundingClientRect().top
+let toPortfolio = document.querySelector('#portfolio').getBoundingClientRect().top
+let toContacts  = document.querySelector('#contacts').getBoundingClientRect().top
 $('a[href*="#"]').on('click', function(e){
     if ($(this).attr('href') == '#main') {
 		$('.site').animate({
@@ -39,19 +44,19 @@ $('a[href*="#"]').on('click', function(e){
 		},500);
 	} else if ($(this).attr('href') == '#about') {
 		$('.site').animate({
-			scrollTop: $(window).height() + 200
+			scrollTop: toAbout + 20
 		},500);
 	} else if ($(this).attr('href') == '#skills') {
 		$('.site').animate({
-			scrollTop: $(window).height()*2 + 200
+			scrollTop: toSkills + 20
 		},500);
 	} else if ($(this).attr('href') == '#portfolio') {
 		$('.site').animate({
-			scrollTop: $(window).height()*3 + 200
+			scrollTop: toPortfolio + 20
 		},500);
 	} else if ($(this).attr('href') == '#contacts') {
 		$('.site').animate({
-			scrollTop: $(window).height()*4 + 200
+			scrollTop: toContacts + 20
 		},500);
 	}
 	closingMenu()

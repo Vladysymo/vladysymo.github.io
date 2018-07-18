@@ -39,39 +39,29 @@ a {
 }
 
 /*MAIN.CSS*/
-.site::-webkit-scrollbar {
-  width: 5px;
+.site::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
 }
 
-.site::-webkit-scrollbar-button {
-  width: 0;
-  height: 0;
+.site::-webkit-resizer {
+  width: 0px;
+  height: 0px;
 }
 
 .site::-webkit-scrollbar-track {
-  background-color: #fff;
-}
-
-.site::-webkit-scrollbar-track-piece {
-  width: 0;
-  height: 0;
+  background-color: #ffffff;
 }
 
 .site::-webkit-scrollbar-thumb {
   background-color: #000;
 }
 
-.site::-webkit-scrollbar-corner {
-  width: 0;
-  height: 0;
+.site::-webkit-scrollbar {
+  width: 0px;
 }
 
-.site::-webkit-resizer {
-  width: 0;
-  height: 0;
-}
-
-.site header .row .menu-wrapper, .site header .row .title-wrapper {
+.site header .row .menu-wrapper, .site header .row .title-wrapper, .float_btn .row .col-md-2 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -142,22 +132,31 @@ body {
   user-select: none;
 }
 
+.float_btn {
+  position: fixed;
+  width: 100%;
+  top: -100px;
+  transition: .5s;
+}
+
+.float_btn.showed {
+  top: 0;
+}
+
+.float_btn .row {
+  height: 100px;
+}
+
 .floatingMenuBtn {
   height: 50px;
   width: 50px;
   border-radius: 50%;
   cursor: pointer;
   box-shadow: 1px 2px 10px #a5a5a5;
-  position: fixed;
-  top: -60px;
-  left: 75px;
+  position: relative;
   background-color: #fff;
   transition: .5s;
   z-index: 102;
-}
-
-.floatingMenuBtn.showed {
-  top: 75px;
 }
 
 .floatingMenuBtn .line {
@@ -297,9 +296,46 @@ body {
 
 .site .main {
   background-color: #8BC34A;
-  background-image: url(../img/bg.jpg);
-  background-size: 100%;
-  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-repeat: repeat;
+  background-position: center 0;
+  height: auto;
+  padding-bottom: 100px;
+}
+
+.site .main a.btn {
+  display: block;
+  height: 80px;
+  width: 400px;
+  line-height: 80px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #FBC02D;
+  color: #000;
+  font-size: 24px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: .3s;
+}
+
+.site .main a.btn:hover {
+  background-color: #FFEB3B;
+}
+
+.site .main p.pushing {
+  font-size: 34px;
+  width: 100%;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.site .main small {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  margin-top: 100px;
 }
 
 .site .about {
@@ -316,4 +352,23 @@ body {
 
 .site .contacts {
   background-color: #CDDC39;
+}
+
+@media screen and (max-width: 767px) {
+  .menu-inside a {
+    font-size: 20px;
+    width: 140px;
+  }
+  .site .main p.pushing {
+    font-size: 28px;
+  }
+  .site .main small {
+    font-size: 18px;
+  }
+  .site .main a.btn {
+    height: 60px;
+    line-height: 60px;
+    width: 300px;
+    font-size: 18px;
+  }
 }
