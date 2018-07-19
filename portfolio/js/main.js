@@ -6,6 +6,8 @@ const closeMenu = document.querySelector('.close-menu')
 const floatingMenuBtn = document.querySelector('.floatingMenuBtn')
 const floatWrapper    = document.querySelector('.float_btn')
 
+const skillLines = document.querySelectorAll('.line')
+
 menu.addEventListener('click', openMenu)
 floatingMenuBtn.addEventListener('click', openMenu)
 closeMenu.addEventListener('click', closingMenu)
@@ -28,6 +30,10 @@ site.addEventListener('scroll', ()=>{
 	} else {
 		floatWrapper.classList.remove('showed')
 	}
+	for (let line of skillLines) {
+		if (line.getBoundingClientRect().top <= $(window).height()*0.8) 
+			line.classList.add('active')
+	}
 })
 
 
@@ -44,22 +50,25 @@ $('a[href*="#"]').on('click', function(e){
 		},500);
 	} else if ($(this).attr('href') == '#about') {
 		$('.site').animate({
-			scrollTop: toAbout + 20
+			scrollTop: toAbout
 		},500);
 	} else if ($(this).attr('href') == '#skills') {
 		$('.site').animate({
-			scrollTop: toSkills + 20
+			scrollTop: toSkills
 		},500);
 	} else if ($(this).attr('href') == '#portfolio') {
 		$('.site').animate({
-			scrollTop: toPortfolio + 20
+			scrollTop: toPortfolio
 		},500);
 	} else if ($(this).attr('href') == '#contacts') {
 		$('.site').animate({
-			scrollTop: toContacts + 20
+			scrollTop: toContacts
 		},500);
 	}
 	closingMenu()
     e.preventDefault();
 })
 
+window.onload = ()=>{
+//	$('.site').scrollTop($(window).height()*2)
+}

@@ -137,6 +137,7 @@ body {
   width: 100%;
   top: -100px;
   transition: .5s;
+  z-index: 102;
 }
 
 .float_btn.showed {
@@ -156,7 +157,6 @@ body {
   position: relative;
   background-color: #fff;
   transition: .5s;
-  z-index: 102;
 }
 
 .floatingMenuBtn .line {
@@ -300,6 +300,7 @@ body {
   background-repeat: repeat;
   background-position: center 0;
   height: auto;
+  min-height: calc(100vh - 200px);
   padding-bottom: 100px;
 }
 
@@ -343,7 +344,126 @@ body {
 }
 
 .site .skills {
-  background-color: #FF9800;
+  background-color: #fff;
+  height: auto;
+  min-height: 100vh;
+}
+
+.site .skills .col-md-6 h1 {
+  width: 100%;
+  text-align: center;
+  font-size: 36px;
+  font-weight: 400;
+  margin-top: 160px;
+  margin-bottom: 100px;
+}
+
+.site .skills .col-md-10 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.site .skills .col-md-10 .skill {
+  width: 100%;
+  height: 50px;
+  position: relative;
+}
+
+.site .skills .col-md-10 .skill h3.name {
+  display: block;
+  line-height: 50px;
+  font-size: 19px;
+  font-weight: 300;
+}
+
+.site .skills .col-md-10 .skill .max_line {
+  position: absolute;
+  width: 75%;
+  height: 19px;
+  top: 15.5px;
+  left: 25%;
+}
+
+.site .skills .col-md-10 .skill .max_line .line {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transition: 1s;
+  width: 0;
+  background-color: #27ed16;
+  border-radius: 5px;
+}
+
+.site .skills .col-md-10 .skill .max_line .line::before {
+  display: block;
+  position: absolute;
+  left: 5px;
+  top: 0;
+  font-size: 14px;
+  opacity: 0;
+  transition: 1s;
+}
+
+.site .skills .col-md-10 .skill .max_line .line.n-1::before {
+  content: '90%';
+}
+
+.site .skills .col-md-10 .skill .max_line .line.n-2::before {
+  content: '95%';
+}
+
+.site .skills .col-md-10 .skill .max_line .line.n-3::before {
+  content: '85%';
+}
+
+.site .skills .col-md-10 .skill .max_line .line.n-4::before {
+  content: '70%';
+}
+
+.site .skills .col-md-10 .skill .max_line .line.n-5::before {
+  content: '75%';
+}
+
+.site .skills .col-md-10 .skill .max_line .line.n-6::before {
+  content: '85%';
+}
+
+.site .skills .col-md-10 .skill .max_line .line.n-7::before {
+  content: '80%';
+}
+
+.site .skills .col-md-10 .skill .max_line .line.active::before {
+  opacity: 1;
+}
+
+.site .skills .col-md-10 .skill .max_line .line.active.n-1 {
+  width: 90%;
+}
+
+.site .skills .col-md-10 .skill .max_line .line.active.n-2 {
+  width: 95%;
+}
+
+.site .skills .col-md-10 .skill .max_line .line.active.n-3 {
+  width: 85%;
+}
+
+.site .skills .col-md-10 .skill .max_line .line.active.n-4 {
+  width: 70%;
+}
+
+.site .skills .col-md-10 .skill .max_line .line.active.n-5 {
+  width: 75%;
+}
+
+.site .skills .col-md-10 .skill .max_line .line.active.n-6 {
+  width: 85%;
+}
+
+.site .skills .col-md-10 .skill .max_line .line.active.n-7 {
+  width: 80%;
 }
 
 .site .portfolio {
@@ -370,5 +490,21 @@ body {
     line-height: 60px;
     width: 300px;
     font-size: 18px;
+  }
+  .site .skills .col-md-6 h1 {
+    margin-top: 80px;
+    margin-bottom: 50px;
+  }
+  .site .skills .col-md-10 {
+    margin-bottom: 80px;
+  }
+  .site .skills .col-md-10 .skill {
+    height: 80px;
+  }
+  .site .skills .col-md-10 .skill .max_line {
+    width: 100%;
+    height: 19px;
+    top: 40.5px;
+    left: 0%;
   }
 }
