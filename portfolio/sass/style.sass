@@ -210,13 +210,13 @@ body
 			font-size: $middle-font + 10px
 			width: 100%
 			text-align: center
-			padding-top: 100px
+			padding-top: $big-indent
 		small
 			display: block
 			width: 100%
 			text-align: center
 			font-size: $middle-font
-			margin-top: 100px
+			margin-top: $small-indent
 	.about
 		background-color: #9C27B0
 	.skills
@@ -228,9 +228,10 @@ body
 			text-align: center
 			font-size: $big-font
 			font-weight: 400
+			text-transform: uppercase
 			margin:
-				top: 160px
-				bottom: 100px
+				top: $big-indent
+				bottom: $small-indent
 		.col-md-10
 			display: flex
 			flex-direction: column
@@ -243,7 +244,7 @@ body
 					display: block
 					line-height: 50px
 					font-size: $middle-font - 5px
-					font-weight: 300
+					font-weight: 400
 				.max_line
 					position: absolute
 					width: 75%
@@ -256,10 +257,10 @@ body
 						height: 100%
 						left: 0
 						top: 0
-						transition: 1s
+						transition: 1s cubic-bezier(.8, .01, .2, 1)
 						width: 0
-						background-color: #27ed16
-						border-radius: 5px
+						background-color: $skills-line-color
+						//border-radius: 5px
 						//@for $i from 1 through 7
 							&.n-#{$i}
 								transition-delay: ($i - 1) * 0.2s
@@ -268,32 +269,28 @@ body
 						&::before
 							display: block
 							position: absolute
-							left: 5px
+							//left: 5px
+							right: 5px
 							top: 0
 							font-size: $middle-font - 10px
 							opacity: 0
 							transition: 1s
-						&.n-1
-							&::before
-								content: '90%'
-						&.n-2
-							&::before
-								content: '95%'
-						&.n-3
-							&::before
-								content: '85%'
-						&.n-4
-							&::before
-								content: '70%'
-						&.n-5
-							&::before
-								content: '75%'
-						&.n-6
-							&::before
-								content: '85%'
-						&.n-7
-							&::before
-								content: '80%'
+						&.n-1::before
+							content: '90%'
+						&.n-2::before
+							content: '80%'
+						&.n-3::before
+							content: '95%'
+						&.n-4::before
+							content: '85%'
+						&.n-5::before
+							content: '70%'
+						&.n-6::before
+							content: '75%'
+						&.n-7::before
+							content: '85%'
+						&.n-8::before
+							content: '80%'
 		.col-md-10
 			.skill
 				.max_line
@@ -303,19 +300,64 @@ body
 						&.n-1
 							width: 90%
 						&.n-2
-							width: 95%
+							width: 80%
 						&.n-3
-							width: 85%
+							width: 95%
 						&.n-4
-							width: 70%
-						&.n-5
-							width: 75%
-						&.n-6
 							width: 85%
+						&.n-5
+							width: 70%
+						&.n-6
+							width: 75%
 						&.n-7
+							width: 85%
+						&.n-8
 							width: 80%
 	.portfolio
-		background-color: #2196F3
+		background-color: rgba(0, 0, 0, 0.05)
+		min-height: 100vh
+		height: auto
+		.col-md-6 h1
+			width: 100%
+			text-align: center
+			font-size: $big-font
+			font-weight: 400
+			text-transform: uppercase
+			margin:
+				top: $big-indent
+				bottom: $small-indent
+		.row .col-md
+			display: flex
+			justify-content: space-around
+			flex-wrap: wrap
+			.work
+				overflow: hidden
+				height: 300px
+				width: 300px
+				background-color: $skills-line-color
+				margin-bottom: 50px
+				cursor: pointer
+				position: relative
+				&::before
+					content: ''
+					display: block
+					position: absolute
+					left: 0
+					top: 0
+					width: 100%
+					height: 100%
+					opacity: 0
+					background: rgba(0, 0, 0, 0.3)
+					transition: .5s
+					z-index: 1
+				&:hover::before
+					opacity: 1
+				&:hover img
+					transform: scale(1.1)
+				img
+					width: 100%
+					height: 100%
+					transition: .5s
 	.contacts
 		background-color: #CDDC39
 
