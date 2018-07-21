@@ -132,27 +132,20 @@ body
 			height: 70px
 			line-height: 70px
 			width: 240px
-			transition-duration: .5s
+			//transition: all .5s, color .2s
 			//background-color: #000
 			text-align: center
 			text-transform: uppercase
 			transform: translateX(-50vw)
 			position: relative
-			&:nth-child(1) 
-				transition-delay: 0.1s
-			&:nth-child(2) 
-				transition-delay: 0.2s
-			&:nth-child(3) 
-				transition-delay: 0.3s
-			&:nth-child(4) 
-				transition-delay: 0.4s
-			&:nth-child(5) 
-				transition-delay: 0.5s
+			@for $n from 1 through 5
+				&:nth-child(#{$n})
+					transition: all .5s, transform .5s $n*.1s, color .2s
 			&::before, &::after
 				content: ''
 				display: block
 				position: absolute
-				background-color: #e21b1b
+				background-color: #fff
 				height: 2px
 				width: 20%
 				top: calc(50% - 1px)
@@ -164,9 +157,12 @@ body
 			&::after
 				right: -20%
 				transform: translateX(-50%)
-			&:hover::before, &:hover::after
-				transform: translateX(0)
-				opacity: 1
+			&:hover
+				color: $hover-color
+				&::before, &::after
+					transform: translateX(0)
+					opacity: 1
+					background-color: $hover-color
 			
 .menu.open
 	z-index: 101
@@ -177,10 +173,10 @@ body
 .site
 	section
 		width: 100%
-		height: 100vh
+	//main*************************************************************
 	.main
 		background:
-			color: #8BC34A
+			color: rgba(139, 195, 74, 0)
 			//image: url(../img/bg.jpg)
 			size: auto 100%
 			repeat: repeat
@@ -195,17 +191,19 @@ body
 			width: 400px
 			line-height: $height
 			text-align: center
-			border-radius: 10px
-			background-color: #FBC02D
-			color: #000
+			border-radius: 5px
+			background-color: $button-color
+			color: #fff
 			font-size: $middle-font
 			margin: 
 				top: 30px
 				left: auto
 				right: auto
 			transition: .3s
+			box-shadow: -1px 2px 6px lighten($button-color, 0%)
 			&:hover 
-				background-color: #FFEB3B
+				background-color: lighten($button-color, 10%)
+				box-shadow: 0px 4px 8px lighten($button-color, 0%)
 		p.pushing
 			font-size: $middle-font + 10px
 			width: 100%
@@ -217,8 +215,37 @@ body
 			text-align: center
 			font-size: $middle-font
 			margin-top: $small-indent
+	//about*************************************************************
 	.about
-		background-color: #9C27B0
+		background-color: rgba(0, 0, 0, 0.05)
+		min-height: 100vh
+		.row 
+			min-height: 100vh
+		.col-md-10
+			@extend %center-element
+			.card
+				width: 100%
+				background: #fff
+				margin: 50px 0
+				padding: $small-indent / 2
+				border-radius: 20px
+				box-shadow: -5px 5px 30px rgba(0, 0, 0, 0.2)
+				h1
+					text-transform: uppercase
+					width: 100%
+					text-align: center
+					font-size: $big-font
+					font-weight: 400
+					margin:
+						top: $big-indent / 2
+						bottom: $small-indent / 2
+				p
+					text-align: center
+					font-weight: 300
+					font-size: $font-normal + 2px
+					margin-bottom: $small-indent / 4
+					
+	//skills*************************************************************
 	.skills
 		background-color: #fff
 		height: auto
@@ -251,7 +278,12 @@ body
 					height: $middle-font - 5px
 					top: 25px - ($middle-font - 5px) / 2
 					left: 25%
-					//background-color: #ed1818
+					border-radius: 999px
+					//background-color: lighten($skills-line-color, 50%)
+					@each $number, $color in $skills-line-colors
+						&.n-#{$number}
+							background-color: lighten($color, 40%)
+							
 					.line
 						position: absolute
 						height: 100%
@@ -259,13 +291,20 @@ body
 						top: 0
 						transition: 1s cubic-bezier(.8, .01, .2, 1)
 						width: 0
-						background-color: $skills-line-color
+						//background-color: $skills-line-color
 						//border-radius: 5px
+						border-radius: 999px
 						//@for $i from 1 through 7
 							&.n-#{$i}
 								transition-delay: ($i - 1) * 0.2s
 								&::before
 									transition-delay: ($i - 1) * 0.2s
+						@each $number, $color, $font in $skills-line-colors
+							&.n-#{$number}
+								background-color: $color
+								box-shadow: 0px 1px 5px lighten($color, 10%)
+								&::before
+									color: $font
 						&::before
 							display: block
 							position: absolute
@@ -313,6 +352,7 @@ body
 							width: 85%
 						&.n-8
 							width: 80%
+	//portfolio*************************************************************
 	.portfolio
 		background-color: rgba(0, 0, 0, 0.05)
 		min-height: 100vh
@@ -331,11 +371,15 @@ body
 			justify-content: space-around
 			flex-wrap: wrap
 			.work
+				@each $n, $bg in $portfolio-bg-colors
+					&.n-#{$n}
+						background-color: lighten($bg, 30%)
 				overflow: hidden
 				height: 300px
 				width: 300px
-				background-color: $skills-line-color
+				//background-color: $skills-line-color
 				margin-bottom: 50px
+				border-radius: 5px
 				cursor: pointer
 				position: relative
 				&::before
@@ -358,8 +402,14 @@ body
 					width: 100%
 					height: 100%
 					transition: .5s
+	//contacts*************************************************************
 	.contacts
-		background-color: #CDDC39
+		background-color: rgba(205, 220, 57, 0)
+		min-height: 100vh
+	//footer*************************************************************
+	footer
+		min-height: 50vh
+		background-color: #212121
 
 
 
