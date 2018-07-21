@@ -7,6 +7,7 @@ const floatingMenuBtn = document.querySelector('.floatingMenuBtn')
 const floatWrapper    = document.querySelector('.float_btn')
 
 const skillLines = document.querySelectorAll('.line')
+const cardAbout  = document.querySelector('.site .about .row .card')
 
 menu.addEventListener('click', openMenu)
 floatingMenuBtn.addEventListener('click', openMenu)
@@ -34,6 +35,7 @@ site.addEventListener('scroll', ()=>{
 		if (line.getBoundingClientRect().top <= $(window).height()*0.8) 
 			line.classList.add('active')
 	}
+	if (cardAbout.getBoundingClientRect().top <= $(window).height()*0.5) cardAbout.classList.add('active')
 })
 
 
