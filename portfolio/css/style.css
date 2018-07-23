@@ -61,7 +61,7 @@ a {
   width: 0px;
 }
 
-.site header .row .menu-wrapper, .site header .row .title-wrapper, .float_btn .row .col-md-2, .site .about .col-md-10, .site .contacts .row .col-md {
+.site header .row .menu-wrapper, .site header .row .title-wrapper, .float_btn .row .col-md-2, .site .about .col-md-10, .site .contacts .row .form {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,6 +71,37 @@ body {
   perspective: 1000px;
   overflow: hidden;
   background-color: #388E3C;
+}
+
+h2 {
+  width: 100%;
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: #444;
+  margin-top: 160px;
+  margin-bottom: 100px;
+}
+
+.btn {
+  display: block;
+  text-align: center;
+  border-radius: 999px;
+  background-color: #2e7d32;
+  color: #fff;
+  font-size: 24px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: .3s;
+  box-shadow: -1px 2px 6px #2e7d32;
+}
+
+.btn:hover {
+  background-color: #3ca241;
+  box-shadow: 0px 4px 8px #2e7d32;
 }
 
 .site {
@@ -128,8 +159,14 @@ body {
 
 .site header .row .title-wrapper h1 {
   font-size: 36px;
-  font-weight: 400;
+  font-weight: 700;
   user-select: none;
+  letter-spacing: 10px;
+  color: #555;
+}
+
+.site header .row .title-wrapper h1 span {
+  color: #2e7d32;
 }
 
 .float_btn {
@@ -308,25 +345,9 @@ body {
 }
 
 .site .main a.btn {
-  display: block;
   height: 80px;
   width: 400px;
   line-height: 80px;
-  text-align: center;
-  border-radius: 5px;
-  background-color: #2e7d32;
-  color: #fff;
-  font-size: 24px;
-  margin-top: 30px;
-  margin-left: auto;
-  margin-right: auto;
-  transition: .3s;
-  box-shadow: -1px 2px 6px #2e7d32;
-}
-
-.site .main a.btn:hover {
-  background-color: #3ca241;
-  box-shadow: 0px 4px 8px #2e7d32;
 }
 
 .site .main p.pushing {
@@ -368,12 +389,7 @@ body {
   opacity: 1;
 }
 
-.site .about .col-md-10 .card h1 {
-  text-transform: uppercase;
-  width: 100%;
-  text-align: center;
-  font-size: 36px;
-  font-weight: 400;
+.site .about .col-md-10 .card h2 {
   margin-top: 80px;
   margin-bottom: 50px;
 }
@@ -389,16 +405,6 @@ body {
   background-color: #fff;
   height: auto;
   min-height: 100vh;
-}
-
-.site .skills .col-md-6 h1 {
-  width: 100%;
-  text-align: center;
-  font-size: 36px;
-  font-weight: 400;
-  text-transform: uppercase;
-  margin-top: 160px;
-  margin-bottom: 100px;
 }
 
 .site .skills .col-md-10 {
@@ -627,16 +633,6 @@ body {
   height: auto;
 }
 
-.site .portfolio .col-md-6 h1 {
-  width: 100%;
-  text-align: center;
-  font-size: 36px;
-  font-weight: 400;
-  text-transform: uppercase;
-  margin-top: 160px;
-  margin-bottom: 100px;
-}
-
 .site .portfolio .row .col-md {
   display: flex;
   justify-content: space-around;
@@ -648,7 +644,7 @@ body {
   height: 300px;
   width: 300px;
   margin-bottom: 50px;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   position: relative;
 }
@@ -694,77 +690,77 @@ body {
 }
 
 .site .portfolio a.btn {
-  display: block;
   height: 60px;
   width: 200px;
   line-height: 60px;
-  text-align: center;
-  border-radius: 5px;
-  background-color: #2e7d32;
-  color: #fff;
-  font-size: 24px;
-  margin-top: 30px;
-  margin-left: auto;
-  margin-right: auto;
   margin-bottom: 50px;
-  transition: .3s;
-  box-shadow: -1px 2px 6px #2e7d32;
-}
-
-.site .portfolio a.btn:hover {
-  background-color: #3ca241;
-  box-shadow: 0px 4px 8px #2e7d32;
 }
 
 .site .contacts {
   background-color: rgba(205, 220, 57, 0);
   min-height: 100vh;
+  padding-top: 160px;
 }
 
-.site .contacts .row .col-md form {
+.site .contacts .row .form__elem {
   width: 300px;
   margin: 100px 0;
 }
 
-.site .contacts .row .col-md form input {
-  width: 300px;
+.site .contacts .row .form__input {
+  width: 100%;
   height: 50px;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.site .contacts .row .form__input input {
+  width: 100%;
+  position: relative;
+  display: block;
+  height: 100%;
   margin-bottom: 30px;
   font-size: 24px;
+  outline: none;
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom: 3px solid #e3e3e3;
+  border-bottom: 2px solid #aaa;
 }
 
-.site .contacts .row .col-md form input:focus {
-  border-bottom: 3px solid #2e7d32;
-  outline: none;
+.site .contacts .row .form__input input::before {
+  content: '1';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  width: 100%;
+  background-color: #f00;
 }
 
-.site .contacts .row .col-md form button {
+.site .contacts .row .form__input input ~ label {
+  font-size: 24px;
+  display: block;
+  line-height: 50px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #aaa;
+  user-select: none;
+}
+
+.site .contacts .row .form__btn {
   display: block;
   height: 50px;
-  width: 200px;
+  width: 250px;
   line-height: 50px;
-  text-align: center;
-  border-radius: 5px;
-  background-color: #2e7d32;
-  color: #fff;
-  font-size: 24px;
   margin-top: 0px;
-  margin-left: auto;
-  margin-right: auto;
   margin-bottom: 50px;
-  transition: .3s;
-  box-shadow: -1px 2px 6px #2e7d32;
   border: none;
   cursor: pointer;
-}
-
-.site .contacts .row .col-md form button:hover {
-  background-color: #3ca241;
-  box-shadow: 0px 4px 8px #2e7d32;
 }
 
 .site footer {
