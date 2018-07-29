@@ -61,7 +61,7 @@ a {
   width: 0px;
 }
 
-.site header .row .menu-wrapper, .site header .row .title-wrapper, .float_btn .row .col-md-2, .site .about .col-md-10, .site .contacts .row .form {
+.site header .row .menu-wrapper, .site header .row .title-wrapper, .site header .row .menu-wrapper-back, .float_btn .row .col-md-2, .site .about .col-md-10, .site .contacts .row .form {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -157,6 +157,54 @@ h2 {
   bottom: 30%;
 }
 
+.site header .row .menu-wrapper-back menu {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 1px 2px 10px #a5a5a5;
+  position: relative;
+}
+
+.site header .row .menu-wrapper-back menu .line {
+  position: absolute;
+  background-color: #000;
+  width: 50%;
+  height: 2px;
+  left: 25%;
+  top: calc(50% - 1px);
+  transition: .3s;
+}
+
+.site header .row .menu-wrapper-back menu .line.first {
+  transform: rotate(0deg);
+  width: 30%;
+  transform-origin: 0% 50%;
+}
+
+.site header .row .menu-wrapper-back menu .line.third {
+  width: 30%;
+  transform-origin: 0% 50%;
+  transform: rotate(0deg);
+}
+
+@media screen and (max-width: 767px) {
+  .site header .row .menu-wrapper-back menu .line.first {
+    transform: rotate(-45deg);
+  }
+  .site header .row .menu-wrapper-back menu .line.third {
+    transform: rotate(45deg);
+  }
+}
+
+.site header .row .menu-wrapper-back menu:hover .line.first {
+  transform: rotate(-45deg);
+}
+
+.site header .row .menu-wrapper-back menu:hover .line.third {
+  transform: rotate(45deg);
+}
+
 .site header .row .title-wrapper h1 {
   font-size: 36px;
   font-weight: 700;
@@ -214,6 +262,55 @@ h2 {
 
 .floatingMenuBtn .line.third {
   bottom: 30%;
+}
+
+.floatingMenuBtnBack {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 1px 2px 10px #a5a5a5;
+  position: relative;
+  background-color: #fff;
+}
+
+.floatingMenuBtnBack .line {
+  position: absolute;
+  background-color: #000;
+  width: 50%;
+  height: 2px;
+  left: 25%;
+  top: calc(50% - 1px);
+  transition: .3s;
+}
+
+.floatingMenuBtnBack .line.first {
+  transform: rotate(0deg);
+  width: 30%;
+  transform-origin: 0% 50%;
+}
+
+.floatingMenuBtnBack .line.third {
+  width: 30%;
+  transform-origin: 0% 50%;
+  transform: rotate(0deg);
+}
+
+@media screen and (max-width: 767px) {
+  .floatingMenuBtnBack .line.first {
+    transform: rotate(-45deg);
+  }
+  .floatingMenuBtnBack .line.third {
+    transform: rotate(45deg);
+  }
+}
+
+.floatingMenuBtnBack:hover .line.first {
+  transform: rotate(-45deg);
+}
+
+.floatingMenuBtnBack:hover .line.third {
+  transform: rotate(45deg);
 }
 
 .menu {
@@ -336,6 +433,7 @@ h2 {
 
 .site .main {
   background-color: rgba(139, 195, 74, 0);
+  background-image: url(../img/bg.png);
   background-size: auto 100%;
   background-repeat: repeat;
   background-position: center 0;
@@ -647,6 +745,7 @@ h2 {
   border-radius: 10px;
   cursor: pointer;
   position: relative;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
 }
 
 .site .portfolio .row .col-md .work.n-1 {
@@ -698,13 +797,54 @@ h2 {
 
 .site .contacts {
   background-color: rgba(205, 220, 57, 0);
-  min-height: 100vh;
   padding-top: 160px;
+}
+
+.site .contacts .row .text p {
+  margin-bottom: 30px;
+}
+
+.site .contacts .row .text .social {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 160px;
+  margin-top: 100px;
+}
+
+.site .contacts .row .text .social a {
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-color: #afafaf;
+  border-radius: 50px;
+  margin: 20px;
+  transition: .3s;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+}
+
+.site .contacts .row .text .social a i {
+  font-size: 36px;
+  width: 100%;
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
+}
+
+.site .contacts .row .text .social .vk:hover {
+  background-color: #4a76a8;
+}
+
+.site .contacts .row .text .social .telegram:hover {
+  background-color: #40a7e3;
+}
+
+.site .contacts .row .text .social .github:hover {
+  background-color: #24292e;
 }
 
 .site .contacts .row .form__elem {
   width: 300px;
-  margin: 100px 0;
 }
 
 .site .contacts .row .form__input {
@@ -722,25 +862,34 @@ h2 {
   margin-bottom: 30px;
   font-size: 24px;
   outline: none;
+  transition: .3s;
   border-top: none;
   border-left: none;
   border-right: none;
   border-bottom: 2px solid #aaa;
 }
 
-.site .contacts .row .form__input input::before {
-  content: '1';
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 10px;
-  width: 100%;
-  background-color: #f00;
+.site .contacts .row .form__input input:focus {
+  border-bottom: 2px solid #2e7d32;
 }
 
-.site .contacts .row .form__input input ~ label {
+.site .contacts .row .form__input input:focus + label {
+  font-size: 14px;
+  top: -80%;
+  color: #2e7d32;
+}
+
+.site .contacts .row .form__input input:valid {
+  border-bottom: 2px solid #2e7d32;
+}
+
+.site .contacts .row .form__input input:valid + label {
+  font-size: 14px;
+  top: -80%;
+  color: #2e7d32;
+}
+
+.site .contacts .row .form__input input + label {
   font-size: 24px;
   display: block;
   line-height: 50px;
@@ -750,6 +899,8 @@ h2 {
   left: 0;
   color: #aaa;
   user-select: none;
+  cursor: text;
+  transition: .3s;
 }
 
 .site .contacts .row .form__btn {
@@ -763,9 +914,70 @@ h2 {
   cursor: pointer;
 }
 
+.site .contacts .row .form__btn:active {
+  outline: none;
+}
+
 .site footer {
   min-height: 50vh;
   background-color: #212121;
+}
+
+section.works {
+  min-height: 100vh;
+  width: 100%;
+}
+
+section.works .wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+section.works .wrapper .work {
+  width: 300px;
+  height: 450px;
+  background-color: #fff;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.4);
+  transition: box-shadow .2s;
+  cursor: pointer;
+  margin: 30px;
+  border-radius: 10px;
+}
+
+section.works .wrapper .work:hover {
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.4);
+}
+
+section.works .wrapper .work:hover .img img {
+  transform: scale(1.1);
+}
+
+section.works .wrapper .work .img {
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: rgba(127, 239, 58, 0.24);
+}
+
+section.works .wrapper .work .img img {
+  width: 100%;
+  height: 100%;
+  transition: .2s;
+}
+
+section.works .wrapper .work .text {
+  height: 150px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section.works .wrapper .work .text p {
+  width: 100%;
+  text-align: center;
 }
 
 @media screen and (max-width: 767px) {

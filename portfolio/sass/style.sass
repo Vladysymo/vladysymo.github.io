@@ -63,7 +63,7 @@ h2
 		//border: 1px solid #000
 		.row
 			height: 200px
-			.menu-wrapper, .title-wrapper
+			.menu-wrapper, .title-wrapper, .menu-wrapper-back
 				@extend %center-element
 			.menu-wrapper menu
 				height: 50px
@@ -84,6 +84,40 @@ h2
 						top: calc(50% - 1px)
 					&.third
 						bottom: 30%
+			.menu-wrapper-back menu
+				height: 50px
+				width: 50px
+				border-radius: 50%
+				cursor: pointer
+				box-shadow: 1px 2px 10px #a5a5a5
+				position: relative
+				.line
+					position: absolute
+					background-color: $contrast-color
+					width: 50%
+					height: 2px
+					left: 25%
+					top: calc(50% - 1px)
+					transition: .3s
+					&.first
+						transform: rotate(0deg)
+						width: 30%
+						transform-origin: 0% 50%
+					&.third
+						width: 30%
+						transform-origin: 0% 50%
+						transform: rotate(0deg)
+					@media screen and (max-width: 767px)
+						&.first
+							transform: rotate(-45deg)
+						&.third
+							transform: rotate(45deg)
+				&:hover
+					.line
+						&.first
+							transform: rotate(-45deg)
+						&.third
+							transform: rotate(45deg)
 			.title-wrapper h1
 				font-size: $big-font 
 				font-weight: 700
@@ -127,6 +161,42 @@ h2
 			top: calc(50% - 1px)
 		&.third
 			bottom: 30%
+
+.floatingMenuBtnBack
+	height: 50px
+	width: 50px
+	border-radius: 50%
+	cursor: pointer
+	box-shadow: 1px 2px 10px #a5a5a5
+	position: relative
+	background-color: #fff
+	.line
+		position: absolute
+		background-color: $contrast-color
+		width: 50%
+		height: 2px
+		left: 25%
+		top: calc(50% - 1px)
+		transition: .3s
+		&.first
+			transform: rotate(0deg)
+			width: 30%
+			transform-origin: 0% 50%
+		&.third
+			width: 30%
+			transform-origin: 0% 50%
+			transform: rotate(0deg)
+		@media screen and (max-width: 767px)
+			&.first
+				transform: rotate(-45deg)
+			&.third
+				transform: rotate(45deg)
+	&:hover
+		.line
+			&.first
+				transform: rotate(-45deg)
+			&.third
+				transform: rotate(45deg)
 
 
 .menu
@@ -210,7 +280,7 @@ h2
 	.main
 		background:
 			color: rgba(139, 195, 74, 0)
-			//image: url(../img/bg.jpg)
+			image: url(../img/bg.png)
 			size: auto 100%
 			repeat: repeat
 			position: center 0
@@ -381,6 +451,7 @@ h2
 				border-radius: 10px
 				cursor: pointer
 				position: relative
+				box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2)
 				&::before
 					content: ''
 					display: block
@@ -410,13 +481,43 @@ h2
 	//contacts*************************************************************
 	.contacts
 		background-color: rgba(205, 220, 57, 0)
-		min-height: 100vh
+		//min-height: 100vh
 		padding-top: $big-indent
+		.row .text
+			p
+				margin-bottom: 30px
+			.social
+				width: 100%
+				display: flex
+				justify-content: center
+				margin:
+					bottom: $big-indent
+					top: $small-indent	
+				a
+					display: block
+					width: 50px
+					height: 50px
+					background-color: #afafaf
+					border-radius: 50px
+					margin: 20px
+					transition: .3s
+					box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3)
+					i
+						font-size: $big-font
+						width: 100%
+						text-align: center
+						line-height: 50px
+						color: #fff
+				.vk:hover
+					background-color: #4a76a8
+				.telegram:hover
+					background-color: #40a7e3
+				.github:hover
+					background-color: #24292e
 		.row .form
 			@extend %center-element
 			&__elem
 				width: 300px
-				margin: $small-indent 0
 			&__input
 				width: 100%
 				height: 50px
@@ -430,24 +531,25 @@ h2
 					margin-bottom: 30px
 					font-size: $middle-font
 					outline: none
+					transition: .3s
 					border:
 						top: none
 						left: none
 						right: none
 						bottom: 2px solid #aaa
-					&::before
-						content: '1'
-						display: block
-						position: absolute
-						bottom: 0
-						left: 0
-						right: 0
-						height: 10px
-						width: 100%
-						background-color: #f00
 					&:focus
-						//border-bottom: 3px solid $button-color
-					& ~ label
+						& + label
+							font-size: $middle-font - 10px
+							top: -80%
+							color: $button-color
+						border-bottom: 2px solid $button-color
+					&:valid
+						& + label
+							font-size: $middle-font - 10px
+							top: -80%
+							color: $button-color
+						border-bottom: 2px solid $button-color
+					& + label
 						font-size: $middle-font
 						display: block
 						line-height: 50px
@@ -457,6 +559,8 @@ h2
 						left: 0
 						color: #aaa
 						user-select: none
+						cursor: text
+						transition: .3s
 			&__btn
 				$height: 50px
 				display: block
@@ -468,15 +572,53 @@ h2
 					bottom: 50px
 				border: none
 				cursor: pointer
+				&:active
+					outline: none
 	//footer*************************************************************
 	footer
 		min-height: 50vh
 		background-color: #212121
 
-
-
-
-
+//Works.html
+section.works 
+	min-height: 100vh
+	width: 100%
+	.wrapper
+		display: flex
+		justify-content: center
+		flex-wrap: wrap
+		.work
+			width: 300px
+			height: 450px
+			background-color: #fff
+			box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.4)
+			transition: box-shadow .2s
+			cursor: pointer
+			&:hover
+				box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.4)
+				.img img
+					transform: scale(1.1)
+			margin: 30px
+			border-radius: 10px
+			.img
+				width: 300px
+				height: 300px
+				overflow: hidden
+				border-radius: 10px
+				background-color: rgba(127, 239, 58, 0.24)
+				img
+					width: 100%
+					height: 100%
+					transition: .2s
+			.text
+				height: 150px
+				width: 100%
+				display: flex
+				align-items: center
+				justify-content: center
+				p
+					width: 100%
+					text-align: center
 
 
 
