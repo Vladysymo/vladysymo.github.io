@@ -15,7 +15,7 @@ body
 	overflow: hidden
 	background-color: #388E3C
 
-h2
+h4
 	width: 100%
 	text-align: center
 	font-size: $big-font
@@ -43,6 +43,23 @@ h2
 	&:hover 
 		background-color: lighten($button-color, 10%)
 		box-shadow: 0px 4px 8px lighten($button-color, 0%)
+
+//стили для сео
+.seo
+	h1
+		position: absolute
+		left: -9999px
+		top: -9999px
+	h2
+		position: absolute
+		left: -9999px
+		top: -9999px
+	p
+		position: absolute
+		left: -9999px
+		top: -9999px
+
+
 
 .site
 	height: 100vh
@@ -118,7 +135,7 @@ h2
 							transform: rotate(-45deg)
 						&.third
 							transform: rotate(45deg)
-			.title-wrapper h1
+			.title-wrapper h6
 				font-size: $big-font 
 				font-weight: 700
 				user-select: none
@@ -482,7 +499,8 @@ h2
 	.contacts
 		background-color: rgba(205, 220, 57, 0)
 		//min-height: 100vh
-		padding-top: $big-indent
+		//padding-top: $big-indent
+		padding-bottom: $big-indent
 		.row .text
 			p
 				margin-bottom: 30px
