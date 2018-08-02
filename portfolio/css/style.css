@@ -39,29 +39,29 @@ a {
 }
 
 /*MAIN.CSS*/
-.site::-webkit-scrollbar-button {
+::-webkit-scrollbar-button {
   width: 0px;
   height: 0px;
 }
 
-.site::-webkit-resizer {
+::-webkit-resizer {
   width: 0px;
   height: 0px;
 }
 
-.site::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
   background-color: #ffffff;
 }
 
-.site::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background-color: #000;
 }
 
-.site::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 0px;
 }
 
-.site header .row .menu-wrapper, .site header .row .title-wrapper, .site header .row .menu-wrapper-back, .float_btn .row .col-md-2, .site .about .col-md-10, .site .contacts .row .form {
+.site header .row .menu-wrapper, .site header .row .title-wrapper, .site header .row .menu-wrapper-back, .float_btn .row .col-md-2, .site .about .col-md-10, .site .contacts .row .form, .site footer .col-md-4, .popup_wrapper, .popup_wrapper .popup .rowz {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -102,6 +102,18 @@ h4 {
 .btn:hover {
   background-color: #3ca241;
   box-shadow: 0px 4px 8px #2e7d32;
+}
+
+h6.logo {
+  font-size: 36px;
+  font-weight: 700;
+  user-select: none;
+  letter-spacing: 10px;
+  color: #555;
+}
+
+h6.logo span {
+  color: #2e7d32;
 }
 
 .seo h1 {
@@ -221,18 +233,6 @@ h4 {
 
 .site header .row .menu-wrapper-back menu:hover .line.third {
   transform: rotate(45deg);
-}
-
-.site header .row .title-wrapper h6 {
-  font-size: 36px;
-  font-weight: 700;
-  user-select: none;
-  letter-spacing: 10px;
-  color: #555;
-}
-
-.site header .row .title-wrapper h6 span {
-  color: #2e7d32;
 }
 
 .float_btn {
@@ -939,11 +939,57 @@ h4 {
 .site footer {
   min-height: 50vh;
   background-color: #212121;
+  padding-bottom: 100px;
+}
+
+.site footer .col-md-4 {
+  flex-direction: column;
+  padding-top: 100px;
+}
+
+.site footer p.title {
+  color: #fff;
+}
+
+.site footer ul, .site footer li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site footer ul {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.site footer ul li {
+  width: 100%;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 10px;
+}
+
+.site footer ul li a {
+  width: 100%;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.site footer .copy {
+  width: 100%;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.site footer h6 {
+  color: #c9c9c9;
+  margin-bottom: 100px;
 }
 
 section.works {
   min-height: 100vh;
   width: 100%;
+  padding-bottom: 160px;
 }
 
 section.works .wrapper {
@@ -998,6 +1044,97 @@ section.works .wrapper .work .text p {
   text-align: center;
 }
 
+.popup_wrapper {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+  transition: opacity .5s, left 0s .5s, top 0s .5s;
+  opacity: 0;
+  left: -9999px;
+  top: -9999px;
+}
+
+.popup_wrapper .popup {
+  background-color: #fff;
+  position: absolute;
+  height: 80vh;
+  width: 90%;
+  transform: scale(0);
+  max-width: 1140px;
+  transition: .5s;
+  border-radius: 25px;
+  box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.7);
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.popup_wrapper .popup .rowz {
+  min-height: 50px;
+}
+
+.popup_wrapper .popup .rowz p {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.popup_wrapper .popup .rowz p span {
+  color: #000;
+}
+
+.popup_wrapper .popup .title span {
+  font-weight: 800;
+}
+
+.popup_wrapper .popup .work-link p {
+  padding-left: 30px;
+}
+
+.popup_wrapper .popup .work-link p span {
+  color: #00f;
+}
+
+.popup_wrapper .popup .work-link a {
+  margin: 0 0 0 10px;
+  font-size: 16px;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+}
+
+.popup_wrapper .popup .decription {
+  padding: 30px;
+}
+
+.popup_wrapper .popup .photos {
+  flex-direction: column;
+}
+
+.popup_wrapper .popup .photos p {
+  width: 100%;
+  text-align: left;
+  padding-left: 30px;
+}
+
+.popup_wrapper .popup .photos img {
+  width: 90%;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.popup_wrapper.open {
+  opacity: 1;
+  left: 0;
+  top: 0;
+  transition: top 0s .0s, left 0s .0s, opacity .5s;
+}
+
+.popup_wrapper.open .popup {
+  transform: scale(1);
+}
+
 @media screen and (max-width: 767px) {
   h4 {
     margin-top: 80px;
@@ -1041,5 +1178,8 @@ section.works .wrapper .work .text p {
   .site .portfolio .col-md-6 h1 {
     margin-top: 80px;
     margin-bottom: 50px;
+  }
+  .popup .work-link {
+    flex-direction: column;
   }
 }
