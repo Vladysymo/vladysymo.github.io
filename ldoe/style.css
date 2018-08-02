@@ -1,0 +1,161 @@
+/*MAIN*/
+body{
+    background: url(images/background.png) top center no-repeat #000;
+    font-family: Arial, Tahoma, sans-serif;
+    color: #fff;
+    font-size: 1em;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+/*/MAIN*/
+
+/*NAV*/
+div.nav{
+    height: 50px;
+    width: 900px;
+    margin: 300px auto 0px auto;
+    background: #262b2a;
+}
+div.nav a{
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    width: 140px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+div.nav a:hover{
+    background: #23edea;
+    color: #262b2a;
+    -webkit-transition: background .1s;
+    -o-transition: background .1s;
+    transition: background .1s;
+}
+div.nav a.current{
+    background: #23edea;
+    color: #262b2a;
+}
+div.bottom{
+    height: 5px;
+    background: #23edea;
+    width: 900px;
+    margin: 0px auto 0px auto;
+}
+/*/NAV*/
+
+/*CONTENT*/
+div.main{
+    width: 900px;
+    min-height: 900px;
+    margin: 10px auto 0px auto;
+    background: #262b2a;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+div.main p{
+    padding: 35px 25px 0px 25px;
+}
+a.GP{
+    color: #23edea;
+    text-decoration: underline;
+}
+span.green{
+    color: #23edea;
+    font-weight: bold;
+}
+/*ARTICLE-LIFEHACKS*/
+div.article{
+    height: 200px;
+    width: 860px;
+    padding: 20px;
+    position: relative;
+}
+div.article:before{
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 700px;
+    background: #fff;
+    bottom: 0;
+    left: 100px;
+}
+div.main div.article div.foto{
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+    float: left;
+}
+div.main div.article div.text{
+    display: inline-block;
+    height: 200px;
+    width: 640px;
+    margin-left: 20px;
+}
+div.main div.article div.text div.words{
+    height: 170px;
+}
+div.main div.article div.text a{
+    font-size: 16px;
+    padding: 5px 10px;
+    color: #21c0be;
+    background: #1c4643;
+    border: 1px solid #1d7975;
+    box-shadow: 1px 2px 3px #393632;
+    font-weight: normal;
+    float: right;
+}
+div.main div.article div.text a:hover{
+    color: #00e2df;
+    background: #0a4747;
+    border: 1px solid #0b8f8e;
+    box-shadow: none;
+    transform: scale(0.9);
+}
+/*LIFEHUCK1*/
+div.main div.comp div.text div.words h1{
+    color: #21c0be;
+    font-size: 22px;
+}
+div.main div.comp div.text div.words h2{
+    font-size: 18px;
+    font-weight: normal;
+    margin-top: 20px;
+    margin-top: 20px;
+}
+div.main div.comp div.foto{
+    background: url(images/1.png);
+}
+div.main h1.l1{
+    font-size: 24px;
+    color: #23edea;
+    margin-left: 50px;
+    padding-top: 50px;
+}
+
+/*/LIFEHUCK1*/
+/*/ARTICLE-LIFEHACKS*/
+/*FOOTER*/
+div.footer{
+    width: 900px;
+    margin: 5px auto;
+    font-size: 12px;
+    color: #c4c4c4;
+}
+div.footer div{
+    display: inline-block;
+    margin-top: 5px;
+    margin-left: 100px;
+}
+div.footer a{
+    color: #c4c4c4;
+    text-decoration: underline;
+}
+/*/FOOTER*/
+/*/CONTENT*/
+
+.li {
+    
+}
