@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*FONTS.CSS*/
 @font-face {
   font-family: 'Open Sans';
@@ -15,6 +16,18 @@
   font-family: 'Open Sans';
   src: url(../fonts/OpenSans-Light.ttf);
   font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Font Awesome';
+  src: url(../fonts/fa-solid-900.ttf);
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: 'Font Awesome';
+  src: url(../fonts/fa-regular-400.ttf);
+  font-weight: 400;
 }
 
 /*RESET.CSS*/
@@ -505,7 +518,7 @@ h6.logo span {
   opacity: 1;
 }
 
-.site .about .col-md-10 .card h2 {
+.site .about .col-md-10 .card h4 {
   margin-top: 80px;
   margin-bottom: 50px;
 }
@@ -535,7 +548,7 @@ h6.logo span {
   position: relative;
 }
 
-.site .skills .col-md-10 .skill h3.name {
+.site .skills .col-md-10 .skill h5.name {
   display: block;
   line-height: 50px;
   font-size: 19px;
@@ -984,6 +997,28 @@ h6.logo span {
 .site footer h6 {
   color: #c9c9c9;
   margin-bottom: 100px;
+}
+
+.site footer li {
+  position: relative;
+}
+
+.site footer li.phone::before, .site footer li.mail::before {
+  font-family: 'Font Awesome';
+  position: absolute;
+  left: -25px;
+  top: 4px;
+  color: #fff;
+}
+
+.site footer li.phone::before {
+  content: '';
+  font-weight: 900;
+}
+
+.site footer li.mail::before {
+  content: '';
+  font-weight: 400;
 }
 
 section.works {

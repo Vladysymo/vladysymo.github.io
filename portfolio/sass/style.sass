@@ -340,7 +340,7 @@ h6.logo
 				opacity: 0
 				&.active
 					opacity: 1
-				h2
+				h4
 					margin:
 						top: $big-indent / 2
 						bottom: $small-indent / 2
@@ -363,7 +363,7 @@ h6.logo
 				width: 100%
 				height: 50px
 				position: relative
-				h3.name
+				h5.name
 					display: block
 					line-height: 50px
 					font-size: $middle-font - 5px
@@ -628,7 +628,20 @@ h6.logo
 		h6
 			color: #c9c9c9
 			margin-bottom: $small-indent
-
+		li
+			position: relative
+		li.phone::before, li.mail::before
+			font-family: 'Font Awesome'
+			position: absolute
+			left: -25px
+			top: 4px
+			color: #fff
+		li.phone::before
+			content: ''
+			font-weight: 900
+		li.mail::before
+			content: ''
+			font-weight: 400
 //Works.html
 section.works 
 	min-height: 100vh

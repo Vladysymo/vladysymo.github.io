@@ -74,3 +74,6 @@ $('a[href*="#"]').on('click', function(e){
 window.onload = ()=>{
 //	$('.site').scrollTop($(window).height()*2)
 }
+
+
+
