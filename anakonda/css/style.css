@@ -206,7 +206,7 @@ body {
   position: absolute;
   right: 50px;
   top: 0;
-  background: url(/img/search.png) no-repeat center;
+  background: url(img/search.png) no-repeat center;
 }
 
 .cart {
