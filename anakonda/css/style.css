@@ -176,9 +176,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
-.search form {
+.search input {
   height: 100%;
   width: 100%;
   background-color: #fff;
@@ -186,18 +187,13 @@ body {
   overflow: hidden;
   display: block;
   position: relative;
-}
-
-.search form input {
-  height: 100%;
-  width: 100%;
   border: none;
   outline: none;
   padding-left: 52px;
   font-size: 19px;
 }
 
-.search form button {
+.search button {
   height: 100%;
   width: 50px;
   display: block;
@@ -381,7 +377,7 @@ body.card {
 
 .card-product {
   overflow: hidden;
-  width: 398px;
+  width: 262px;
   height: 453px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.16);
   border: 1px solid #707070;
@@ -396,16 +392,25 @@ body.card {
   width: 100%;
   height: 100%;
   font-family: Roboto, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .card-product > a img {
-  margin-top: 27px;
-  margin-left: 64px;
+  margin-top: -80px;
+/*  margin-left: 64px;*/
+}
+
+.card-product > a .price {
+	color: #f01313;
+	font-weight: 700;
 }
 
 .card-product > a .description {
-  width: 270px;
-  margin-left: 64px;
+  width: 100%;
+/*  margin-left: 64px;*/
   display: block;
   text-align: center;
   font-size: 20px;
@@ -441,15 +446,21 @@ body.card {
   top: 15px;
 }
 
-.card-product .nav .add-to-cart a {
+.card-product button {
+	border: none;
+	background: none;
+	cursor: pointer;
+}
+
+.card-product .nav .add-to-cart button {
   position: relative;
 }
 
-.card-product .nav .add-to-cart a img {
+.card-product .nav .add-to-cart button img {
   height: 45px;
 }
 
-.card-product .nav .add-to-cart a span {
+.card-product .nav .add-to-cart button span {
   position: absolute;
   height: 29px;
   width: 29px;
@@ -466,7 +477,7 @@ body.card {
   transition: .3s;
 }
 
-.card-product .nav .add-to-cart a:hover span {
+.card-product .nav .add-to-cart button:hover span {
   background-color: #ff6d00;
   color: #fff;
 }
@@ -490,12 +501,12 @@ body.card {
   top: 15px;
 }
 
-.card-product .nav .like a img {
+.card-product .nav .like button img {
   height: 49px;
   transition: .3s;
 }
 
-.card-product .nav .like a:hover img {
+.card-product .nav .like button:hover img {
   transform: scale(1.2);
 }
 
@@ -518,7 +529,7 @@ body.card {
   top: 15px;
 }
 
-.card-product .nav .compare a {
+.card-product .nav .compare button {
   height: 100%;
   width: 100%;
   transition: .3s;
@@ -527,11 +538,11 @@ body.card {
   justify-content: center;
 }
 
-.card-product .nav .compare a img {
+.card-product .nav .compare button img {
   height: 38px;
 }
 
-.card-product .nav .compare a:hover {
+.card-product .nav .compare button:hover {
   background-color: #f5f5f5;
 }
 
