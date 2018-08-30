@@ -1,0 +1,29 @@
+.btn {
+  background-color: #1d1d1d;
+  box-shadow: -1px 2px 6px #1d1d1d;
+}
+
+.btn:hover {
+  background-color: #373737;
+  box-shadow: 0px 4px 8px #1d1d1d;
+}
+
+h6.logo span {
+  color: #1d1d1d;
+}
+
+.site .contacts .row .form__input input:focus {
+  border-bottom: 2px solid #1d1d1d;
+}
+
+.site .contacts .row .form__input input:focus + label {
+  color: #1d1d1d;
+}
+
+.site .contacts .row .form__input input:valid {
+  border-bottom: 2px solid #1d1d1d;
+}
+
+.site .contacts .row .form__input input:valid + label {
+  color: #1d1d1d;
+}
