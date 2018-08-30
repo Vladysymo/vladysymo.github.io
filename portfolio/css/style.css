@@ -102,7 +102,11 @@ h4 {
   display: block;
   text-align: center;
   border-radius: 999px;
-  background-color: #2e7d32;
+  background-image: linear-gradient(90deg, #3ca241, #2e7d32);
+  background-color: #3ca241;
+  background-size: 100% 100%;
+  background-position: 0 0;
+  background-repeat: no-repeat;
   color: #fff;
   font-size: 24px;
   margin-top: 30px;
@@ -113,7 +117,7 @@ h4 {
 }
 
 .btn:hover {
-  background-color: #3ca241;
+  background-position: 400px 0;
   box-shadow: 0px 4px 8px #2e7d32;
 }
 
@@ -826,6 +830,10 @@ h6.logo span {
   margin-bottom: 50px;
 }
 
+.site .portfolio a.btn:hover {
+  background-position: 200px 0;
+}
+
 .site .contacts {
   background-color: rgba(205, 220, 57, 0);
   padding-bottom: 160px;
@@ -947,6 +955,10 @@ h6.logo span {
 
 .site .contacts .row .form__btn:active {
   outline: none;
+}
+
+.site .contacts .row .form__btn:hover {
+  background-position: 250px 0;
 }
 
 .site footer {
@@ -1089,6 +1101,7 @@ section.works .wrapper .work .text p {
   opacity: 0;
   left: -9999px;
   top: -9999px;
+  cursor: pointer;
 }
 
 .popup_wrapper .popup {
@@ -1105,6 +1118,7 @@ section.works .wrapper .work .text p {
   overflow-y: auto;
   padding-top: 50px;
   padding-bottom: 50px;
+  cursor: default;
 }
 
 .popup_wrapper .popup .rowz {
@@ -1190,6 +1204,9 @@ section.works .wrapper .work .text p {
     line-height: 60px;
     width: 300px;
     font-size: 18px;
+  }
+  .site .main a.btn:hover {
+    background-position: 300px 0;
   }
   .site .about .row .card {
     padding: 20px;

@@ -31,7 +31,12 @@ h4
 	display: block
 	text-align: center
 	border-radius: 999px
-	background-color: $button-color
+	background:
+		image: $button-gradient-color
+		color: lighten($button-color, 10%)
+		size: 100% 100%
+		position: 0 0
+		repeat: no-repeat
 	color: #fff
 	font-size: $middle-font
 	margin: 
@@ -41,7 +46,9 @@ h4
 	transition: .3s
 	box-shadow: -1px 2px 6px lighten($button-color, 0%)
 	&:hover 
-		background-color: lighten($button-color, 10%)
+		background:
+			position: 400px 0
+			//color: lighten($button-color, 10%)
 		box-shadow: 0px 4px 8px lighten($button-color, 0%)
 
 
@@ -496,6 +503,8 @@ h6.logo
 			width: 200px
 			line-height: $height
 			margin-bottom: 50px
+			&:hover
+				background-position: 200px 0
 	//contacts*************************************************************
 	.contacts
 		background-color: rgba(205, 220, 57, 0)
@@ -593,6 +602,8 @@ h6.logo
 				cursor: pointer
 				&:active
 					outline: none
+				&:hover
+					background-position: 250px 0
 	//footer*************************************************************
 	footer
 		min-height: 50vh
@@ -642,6 +653,9 @@ h6.logo
 		li.mail::before
 			content: ''
 			font-weight: 400
+
+
+
 //Works.html
 section.works 
 	min-height: 100vh
@@ -694,6 +708,7 @@ section.works
 	opacity: 0
 	left: -9999px
 	top: -9999px
+	cursor: pointer
 	@extend %center-element
 	.popup
 		background-color: #fff
@@ -710,6 +725,7 @@ section.works
 		padding: 
 			top: 50px
 			bottom: 50px
+		cursor: default
 		.rowz
 			//background-color: #eaa0a0
 			min-height: 50px
@@ -756,6 +772,10 @@ section.works
 	transition: top 0s .0s, left 0s .0s, opacity .5s
 	.popup
 		transform: scale(1)
+
+
+
+//choosesite.html
 
 
 

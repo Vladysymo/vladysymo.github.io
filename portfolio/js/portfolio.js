@@ -96,6 +96,7 @@ let changePopup = (pattern)=>{
 	document.querySelector('.popup_wrapper .popup .work-link a').setAttribute('href', popupData[pattern].site)
 	document.querySelector('.popup_wrapper .popup .decription span').innerHTML = popupData[pattern].description
 	document.querySelector('.popup_wrapper .popup .photos').innerHTML = popupData[pattern].photos
+	popupIn.scrollTop = 0
 }
 
 for (let el of workElems){
