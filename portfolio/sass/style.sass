@@ -27,7 +27,7 @@ h4
 	margin:
 		top: $big-indent
 		bottom: $small-indent
-
+		
 .btn
 	display: block
 	text-align: center
@@ -76,6 +76,64 @@ h6.logo
 		left: -9999px
 		top: -9999px
 
+
+.theme
+	position: fixed
+	height: 50px
+	width: 50px
+	right: 10px
+	top: 10px
+	cursor: pointer
+	border-radius: 7px 7px 0 0 
+	color: #fff
+	text-align: center
+	transition: 0.3s
+	i
+		font-size: 40px
+		line-height: 50px
+	.colors
+		transition: 0.3s
+		cursor: default
+		position: absolute
+		top: 50px
+		background-color: #fff
+		width: 50px
+		// display: flex
+		// align-items: center
+		// justify-content: center
+		// flex-direction: column
+		border-radius: 0 0 7px 7px
+		overflow: hidden
+		height: 0
+		opacity: 0
+		.color-picker
+			margin: auto
+			cursor: pointer
+			height: 45px
+			width: 45px
+			border-radius: 50%
+			background-color: #000
+			margin-top: 10px
+			&:last-child
+				margin-bottom: 10px
+		.green
+			background-color: #2e7d32
+		.purple
+			background-color: #b419c1
+		.orange
+			background-color: #db9729
+		.blue
+			background-color: #2736eb
+		.black
+			background-color: #000000
+		.red
+			background-color: #ad1212
+	&.open
+		background-color: #fff
+		color: #000000
+		.colors
+			height: 340px
+			opacity: 1
 
 
 .site

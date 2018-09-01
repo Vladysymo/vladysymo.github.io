@@ -5,6 +5,7 @@ const closeMenu = document.querySelector('.close-menu')
 
 const floatingMenuBtn = document.querySelector('.floatingMenuBtn')
 const floatWrapper    = document.querySelector('.float_btn')
+const themeBtn        = document.querySelector('.theme')
 
 const skillLines = document.querySelectorAll('.line')
 const cardAbout  = document.querySelector('.site .about .row .card')
@@ -23,6 +24,10 @@ function closingMenu() {
 	}, 500)
 	menu2.classList.remove('open')
 }
+
+themeBtn.addEventListener('click', ()=>{
+	themeBtn.classList.toggle('open')
+})
 
 
 site.addEventListener('scroll', ()=>{
