@@ -50,14 +50,19 @@ if ( !localStorage.theme ) {
 } else {
     if ( localStorage.theme == 'orange' ) {
         checkTheme('orange')
+        meta.setAttribute('content', '#db9729')
     } else if ( localStorage.theme == 'blue' ) {
         checkTheme('blue')
+        meta.setAttribute('content', '#2736eb')
     } else if ( localStorage.theme == 'red' ) {
         checkTheme('red')
+        meta.setAttribute('content', '#ad1212')
     } else if ( localStorage.theme == 'purple' ) {
         checkTheme('purple')
+        meta.setAttribute('content', '#b419c1')
     } else if ( localStorage.theme == 'black' ) {
         checkTheme('black')
+        meta.setAttribute('content', '#000000')
     }
 }
 
