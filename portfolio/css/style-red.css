@@ -164,6 +164,7 @@ h6.logo span {
   color: #fff;
   text-align: center;
   transition: 0.3s;
+  z-index: -1;
 }
 
 .theme i {
@@ -182,6 +183,7 @@ h6.logo span {
   overflow: hidden;
   height: 0;
   opacity: 0;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
 }
 
 .theme .colors .color-picker {
@@ -198,33 +200,35 @@ h6.logo span {
   margin-bottom: 10px;
 }
 
-.theme .colors .green {
+.theme .colors .color-picker.green {
   background-color: #2e7d32;
 }
 
-.theme .colors .purple {
+.theme .colors .color-picker.purple {
   background-color: #b419c1;
 }
 
-.theme .colors .orange {
+.theme .colors .color-picker.orange {
   background-color: #db9729;
 }
 
-.theme .colors .blue {
+.theme .colors .color-picker.blue {
   background-color: #2736eb;
 }
 
-.theme .colors .black {
+.theme .colors .color-picker.black {
   background-color: #000000;
 }
 
-.theme .colors .red {
+.theme .colors .color-picker.red {
   background-color: #ad1212;
 }
 
 .theme.open {
   background-color: #fff;
   color: #000000;
+  z-index: 999;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 .theme.open .colors {
