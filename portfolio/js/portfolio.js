@@ -1,5 +1,5 @@
-const menuBtn = document.querySelector('.floatingMenuBtnBack')
-const menuInHeader = document.querySelector('.menu-wrapper-back menu')
+const menuBtn = _$('.floatingMenuBtnBack')
+const menuInHeader = _$('.menu-wrapper-back menu')
 
 menuBtn.addEventListener('click', ()=>{
 	window.close()
@@ -9,9 +9,9 @@ menuInHeader.addEventListener('click', ()=>{
 	window.close()
 })
 
-const floatWrapper    = document.querySelector('.float_btn')
-document.querySelector('.site').addEventListener('scroll', ()=>{
-	if (document.querySelector('.site').scrollTop >= 200) {
+const floatWrapper    = _$('.float_btn')
+_$('.site').addEventListener('scroll', ()=>{
+	if (_$('.site').scrollTop >= 200) {
 		floatWrapper.classList.add('showed')
 	} else {
 		floatWrapper.classList.remove('showed')
@@ -21,9 +21,9 @@ document.querySelector('.site').addEventListener('scroll', ()=>{
 
 
 
-const workElems = document.querySelectorAll('.works .work')
-const popup     = document.querySelector('.popup_wrapper')
-const popupIn   = document.querySelector('.popup_wrapper .popup')
+const workElems = __$('.works .work')
+const popup     = _$('.popup_wrapper')
+const popupIn   = _$('.popup_wrapper .popup')
 
 const popupData = {
 	"portfol": {
@@ -84,18 +84,18 @@ const popupData = {
 
 let openPopup = ()=>{
 	popup.classList.add('open')
-	document.querySelector('section.site').style.overflow = 'hidden'
+	_$('section.site').style.overflow = 'hidden'
 }
 let closePopup = ()=>{
 	popup.classList.remove('open')
-	document.querySelector('section.site').style.overflow = ''
+	_$('section.site').style.overflow = ''
 }
 let changePopup = (pattern)=>{
-	document.querySelector('.popup_wrapper .popup .title span').innerHTML = popupData[pattern].title
-	document.querySelector('.popup_wrapper .popup .work-link span').innerHTML = popupData[pattern].site
-	document.querySelector('.popup_wrapper .popup .work-link a').setAttribute('href', popupData[pattern].site)
-	document.querySelector('.popup_wrapper .popup .decription span').innerHTML = popupData[pattern].description
-	document.querySelector('.popup_wrapper .popup .photos').innerHTML = popupData[pattern].photos
+	_$('.popup_wrapper .popup .title span').innerHTML = popupData[pattern].title
+	_$('.popup_wrapper .popup .work-link span').innerHTML = popupData[pattern].site
+	_$('.popup_wrapper .popup .work-link a').setAttribute('href', popupData[pattern].site)
+	_$('.popup_wrapper .popup .decription span').innerHTML = popupData[pattern].description
+	_$('.popup_wrapper .popup .photos').innerHTML = popupData[pattern].photos
 	popupIn.scrollTop = 0
 }
 

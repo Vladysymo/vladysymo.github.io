@@ -1,14 +1,14 @@
-const menu = document.querySelector('.menu-wrapper menu')
-const site = document.querySelector('.site')
-const menu2 = document.querySelector('.menu')
-const closeMenu = document.querySelector('.close-menu')
+const menu = _$('.menu-wrapper menu')
+const site = _$('.site')
+const menu2 = _$('.menu')
+const closeMenu = _$('.close-menu')
 
-const floatingMenuBtn = document.querySelector('.floatingMenuBtn')
-const floatWrapper    = document.querySelector('.float_btn')
-const themeBtn        = document.querySelector('.theme')
+const floatingMenuBtn = _$('.floatingMenuBtn')
+const floatWrapper    = _$('.float_btn')
+const themeBtn        = _$('.theme')
 
-const skillLines = document.querySelectorAll('.line')
-const cardAbout  = document.querySelector('.site .about .row .card')
+const skillLines = __$('.line')
+const cardAbout  = _$('.site .about .row .card')
 
 menu.addEventListener('click', openMenu)
 floatingMenuBtn.addEventListener('click', openMenu)
@@ -23,6 +23,7 @@ function closingMenu() {
 		site.classList.remove('site-open')
 	}, 500)
 	menu2.classList.remove('open')
+	themeBtn.classList.remove('open')
 }
 
 themeBtn.addEventListener('click', ()=>{
@@ -46,10 +47,10 @@ site.addEventListener('scroll', ()=>{
 
 
 //jq soft scroll
-let toAbout     = document.querySelector('#about').getBoundingClientRect().top
-let toSkills    = document.querySelector('#skills').getBoundingClientRect().top
-let toPortfolio = document.querySelector('#portfolio').getBoundingClientRect().top
-let toContacts  = document.querySelector('#contacts').getBoundingClientRect().top
+let toAbout     = _$('#about').getBoundingClientRect().top
+let toSkills    = _$('#skills').getBoundingClientRect().top
+let toPortfolio = _$('#portfolio').getBoundingClientRect().top
+let toContacts  = _$('#contacts').getBoundingClientRect().top
 $('a[href*="#"]').on('click', function(e){
     if ($(this).attr('href') == '#main') {
 		$('.site').animate({

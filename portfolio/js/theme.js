@@ -1,16 +1,18 @@
 //Объявление функций
-const _$ = selector => document.querySelector(selector)
-
+//Функция смены темы при загрузке страницы
 const setTheme = (theme, notmain = false)=>{
     let link = document.createElement('link')
     link.setAttribute('rel', 'stylesheet')
     if ( !notmain ) {
         link.setAttribute('href', `css/style-${theme}.css`)
+        _$('link[type="image/x-icon"]').setAttribute('href', `img/logo-${theme}.png`)
     } else {
         link.setAttribute('href', `../css/style-${theme}.css`)
+        _$('link[type="image/x-icon"]').setAttribute('href', `../img/logo-${theme}.png`)
     }
     _$('head').appendChild(link)
 },
+//Функция определения страницы (главная или нет)
 checkTheme = (theme)=>{
     if (_$('link[href="css/style.css"]')) {
         _$('link[href="css/style.css"]').remove()
@@ -20,6 +22,7 @@ checkTheme = (theme)=>{
         setTheme(theme, true)
     }
 },
+//Функция смены темы при нажатии
 changeTheme = (theme)=>{
     let notmain = false
     if ( _$('link[href^="../css"]') ) {
@@ -37,8 +40,10 @@ changeTheme = (theme)=>{
         link.setAttribute('rel', 'stylesheet')
         if ( !notmain ) {
             link.setAttribute('href', `css/style.css`)
+            _$('link[type="image/x-icon"]').setAttribute('href', `img/logo-${theme}.png`)
         } else {
             link.setAttribute('href', `../css/style.css`)
+            _$('link[type="image/x-icon"]').setAttribute('href', `../img/logo-${theme}.png`)
         }
         _$('head').appendChild(link)
     }
@@ -50,19 +55,19 @@ if ( !localStorage.theme ) {
 } else {
     if ( localStorage.theme == 'orange' ) {
         checkTheme('orange')
-        meta.setAttribute('content', '#db9729')
+        _$('meta[name="theme-color"]').setAttribute('content', '#db9729')
     } else if ( localStorage.theme == 'blue' ) {
         checkTheme('blue')
-        meta.setAttribute('content', '#2736eb')
+        _$('meta[name="theme-color"]').setAttribute('content', '#2736eb')
     } else if ( localStorage.theme == 'red' ) {
         checkTheme('red')
-        meta.setAttribute('content', '#ad1212')
+        _$('meta[name="theme-color"]').setAttribute('content', '#ad1212')
     } else if ( localStorage.theme == 'purple' ) {
         checkTheme('purple')
-        meta.setAttribute('content', '#b419c1')
+        _$('meta[name="theme-color"]').setAttribute('content', '#b419c1')
     } else if ( localStorage.theme == 'black' ) {
         checkTheme('black')
-        meta.setAttribute('content', '#000000')
+        _$('meta[name="theme-color"]').setAttribute('content', '#000000')
     }
 }
 
