@@ -1,14 +1,16 @@
+//Получение элементов кнопок назад
 const menuBtn = _$('.floatingMenuBtnBack')
 const menuInHeader = _$('.menu-wrapper-back menu')
 
+//"Вернуться назад"
 menuBtn.addEventListener('click', ()=>{
 	window.close()
 })
-
 menuInHeader.addEventListener('click', ()=>{
 	window.close()
 })
 
+//Плавающая кнопка на побочных страницах
 const floatWrapper    = _$('.float_btn')
 _$('.site').addEventListener('scroll', ()=>{
 	if (_$('.site').scrollTop >= 200) {
@@ -21,10 +23,12 @@ _$('.site').addEventListener('scroll', ()=>{
 
 
 
+//Получение элементов портфолио
 const workElems = __$('.works .work')
 const popup     = _$('.popup_wrapper')
 const popupIn   = _$('.popup_wrapper .popup')
 
+//Данные всплывающих окон
 const popupData = {
 	"portfol": {
 		title:       'Портфолио',
@@ -82,6 +86,7 @@ const popupData = {
 	},
 }
 
+//Вспомогательные функции
 let openPopup = ()=>{
 	popup.classList.add('open')
 	_$('section.site').style.overflow = 'hidden'
@@ -99,16 +104,17 @@ let changePopup = (pattern)=>{
 	popupIn.scrollTop = 0
 }
 
+//Добавление колбека на клик по любой работе в портфолио
 for (let el of workElems){
 	el.addEventListener('click', ()=>{
 		changePopup(el.classList[1])
 		openPopup()
 	})
 }
-popup.addEventListener('click', (e)=>{
+//Скрытие всплывающего окна нажатием вне его
+if (popup) popup.addEventListener('click', (e)=>{
 	if (!(e.x > popupIn.getBoundingClientRect().left && e.x < popupIn.getBoundingClientRect().right &&
 	   	e.y > popupIn.getBoundingClientRect().top  && e.y < popupIn.getBoundingClientRect().bottom)) {
 		closePopup()
 	}
 })
-		

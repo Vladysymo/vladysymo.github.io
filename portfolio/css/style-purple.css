@@ -75,7 +75,7 @@ a {
   width: 0px;
 }
 
-.site header .row .menu-wrapper, .site header .row .title-wrapper, .site header .row .menu-wrapper-back, .float_btn .row .col-md-2, .site .about .col-md-10, .site .contacts .row .form, .site footer .col-md-4, .popup_wrapper, .popup_wrapper .popup .rowz {
+.site header .row .menu-wrapper, .site header .row .title-wrapper, .site header .row .menu-wrapper-back, .float_btn .row .col-md-2, .site .about .col-md-10, .site .contacts .row .form, .site footer .col-md-4, .popup_wrapper, .popup_wrapper .popup .rowz, .questions .answers .answer label .selected {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -133,24 +133,6 @@ h6.logo {
 
 h6.logo span {
   color: #b419c1;
-}
-
-.seo h1 {
-  position: absolute;
-  left: -9999px;
-  top: -9999px;
-}
-
-.seo h2 {
-  position: absolute;
-  left: -9999px;
-  top: -9999px;
-}
-
-.seo p {
-  position: absolute;
-  left: -9999px;
-  top: -9999px;
 }
 
 .theme {
@@ -1269,6 +1251,206 @@ section.works .wrapper .work .text p {
   transform: scale(1);
 }
 
+.questions {
+  padding-bottom: 160px;
+}
+
+.questions h4 {
+  margin-top: 50px;
+  margin-bottom: 33.33333px;
+  font-size: 31px;
+  transition: 0.3s;
+}
+
+.questions p.title {
+  width: 100%;
+  text-align: center;
+  font-size: 19px;
+  margin-bottom: 50px;
+  color: #5C5C5C;
+  transition: 0.3s;
+}
+
+.questions input {
+  display: none;
+}
+
+.questions .answers {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.questions .answers .answer {
+  margin: 20px;
+  height: 400px;
+}
+
+.questions .answers .answer label {
+  background-color: #fff;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  overflow: hidden;
+  display: block;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  transition: 0.3s;
+  position: relative;
+}
+
+.questions .answers .answer label:hover {
+  box-shadow: 2px 2px 60px rgba(0, 0, 0, 0.4);
+}
+
+.questions .answers .answer label::before {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 25%;
+  left: -100%;
+  width: 100%;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 46px;
+  text-align: center;
+  line-height: 100px;
+  transition: 0.3s;
+}
+
+.questions .answers .answer label:hover::before {
+  left: 0;
+}
+
+.questions .answers .answer label .selected {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.questions .answers .answer label .selected .check {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background-color: #b419c1;
+  background-image: linear-gradient(90deg, #d52ae3, #b419c1);
+  opacity: 0.9;
+  text-align: center;
+}
+
+.questions .answers .answer label .selected .check i {
+  color: #fff;
+  font-size: 100px;
+  line-height: 200px;
+}
+
+.questions .answers .answer label img {
+  width: 100%;
+}
+
+.questions .answers .answer label h5 {
+  width: 100%;
+  text-align: center;
+  font-size: 19px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.questions .answers .answer label p {
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+}
+
+.questions .answers .answer label[for=r1]::before {
+  content: '40$';
+}
+
+.questions .answers .answer label[for=r2]::before {
+  content: '50$';
+}
+
+.questions .answers .answer label[for=r3]::before {
+  content: '300$';
+}
+
+.questions .answers .answer label[for=r4]::before {
+  content: '400$';
+}
+
+.questions .answers .answer input:checked + label > .selected {
+  opacity: 1;
+}
+
+.questions .btn {
+  margin: 50px auto 0 auto;
+  width: 400px;
+  height: 50px;
+  line-height: 50px;
+}
+
+.questions .answers.vertical {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.questions .answers.vertical .answer-vertical {
+  width: 100%;
+  height: 70px;
+}
+
+.questions .answers.vertical .answer-vertical label {
+  position: relative;
+  display: block;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.questions .answers.vertical .answer-vertical label::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  height: 1px;
+  width: 90%;
+  left: 5%;
+  background-color: #DBDBDB;
+}
+
+.questions .answers.vertical .answer-vertical label .text {
+  width: 100%;
+  line-height: 70px;
+  padding-left: 30px;
+}
+
+.questions .answers.vertical .answer-vertical label .price {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.questions .answers.vertical .answer-vertical input:checked + label {
+  background-color: #b419c1;
+  color: #fff;
+}
+
+.questions .hide {
+  opacity: 0;
+}
+
 @media screen and (max-width: 767px) {
   h4 {
     margin-top: 80px;
@@ -1318,5 +1500,18 @@ section.works .wrapper .work .text p {
   }
   .popup .work-link {
     flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .questions .answers {
+    flex-direction: column;
+  }
+  .questions .answers .answer {
+    max-width: 300px;
+    height: 450px;
+  }
+  .questions .btn {
+    width: 300px;
   }
 }

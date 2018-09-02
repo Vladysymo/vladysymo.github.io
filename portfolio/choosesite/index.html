@@ -9,22 +9,11 @@
     <meta name="theme-color" content="#000">
     <title>VLADYSYMO | Мои работы</title>
     <link rel="shortcut icon" type="image/x-icon" href="../img/logo-green.png">
-    <link rel="stylesheet" href="../libs/css/lib.css">
+	<link rel="stylesheet" href="../libs/css/lib.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
 	<link rel="stylesheet" href="../css/style.css">
 	<script src="../js/jq-analog.js"></script>
 	<script src="../js/theme.js"></script>
-    <style>
-		input[type=radio] {
-			display: none;
-		}
-		input[type=radio]:checked + label{
-			background-color: #ff0000;
-			display: block;
-		}
-		label {
-			cursor: pointer;
-		}
-	</style>
 </head>
 <body>
 	
@@ -61,45 +50,83 @@
 			</div>
 		</header>
 		
-		<section class="questions">
-			<h4>Выберите тип сайта</h4>
-			<p class="title">Стоимость сайта будет напрямую зависеть от его типа</p>
-			<ul class="answers">
-				<li>
-					<input type="radio" id="r1" name="sitetype">
-					<label for="r1">
-						<img src="" alt="">
-						<h5>Визитка</h5>
-						<p>Сайт-визитка, стоит дешево, результат неплохой</p>
-					</label>
-				</li>
-				<li>
-					<input type="radio" id="r2" name="sitetype">
-					<label for="r2">
-						<img src="" alt="">
-						<h5>Лендинг</h5>
-						<p>Как сайт-визитка, только длинный и с большим количеством информации</p>
-					</label>
-				</li>
-				<li>
-					<input type="radio" id="r3" name="sitetype">
-					<label for="r3">
-						<img src="" alt="">
-						<h5>Интернет-магазин</h5>
-						<p>Большой, сложный проект, который приносит немало денег</p>
-					</label>
-				</li>
-				<li>
-					<input type="radio" id="r4" name="sitetype">
-					<label for="r4">
-						<img src="" alt="">
-						<h5>Соц. Сеть</h5>
-						<p>Сложно, долго, дорого, но эффективно</p>
-					</label>
-				</li>
-			</ul>
-			<a href="#" class="btn">Далее</a>
-		</section>
+		<div class="container">
+			<div class="row">
+				<section class="questions">
+					<h4>Выберите тип сайта</h4>
+					<p class="title">Стоимость сайта будет напрямую зависеть от его типа</p>
+					<div class="answers">
+						<div class="answer">
+							<input type="radio" id="r1" name="sitetype">
+							<label for="r1">
+								<div class="selected">
+									<div class="check">
+										<i class="fas fa-check"></i>
+									</div>
+								</div>
+								<img src="../img/portfolio.png" alt="">
+								<h5>Визитка</h5>
+								<p>Сайт-визитка, стоит дешево, результат неплохой</p>
+							</label>
+						</div>
+						<div class="answer">
+							<input type="radio" id="r2" name="sitetype">
+							<label for="r2">
+								<div class="selected">
+									<div class="check">
+										<i class="fas fa-check"></i>
+									</div>
+								</div>
+								<img src="../img/portfolio.png" alt="">
+								<h5>Лендинг</h5>
+								<p>Как сайт-визитка, только длинный и с большим количеством информации</p>
+							</label>
+						</div>
+						<div class="answer">
+							<input type="radio" id="r3" name="sitetype">
+							<label for="r3">
+								<div class="selected">
+									<div class="check">
+										<i class="fas fa-check"></i>
+									</div>
+								</div>
+								<img src="../img/portfolio.png" alt="">
+								<h5>Интернет-магазин</h5>
+								<p>Большой, сложный проект, который приносит немало денег</p>
+							</label>
+						</div>
+						<div class="answer">
+							<input type="radio" id="r4" name="sitetype">
+							<label for="r4">
+								<div class="selected">
+									<div class="check">
+										<i class="fas fa-check"></i>
+									</div>
+								</div>
+								<img src="../img/portfolio.png" alt="">
+								<h5>Соц. Сеть</h5>
+								<p>Сложно, долго, дорого, но эффективно</p>
+							</label>
+						</div>
+						<!-- <div class="answer-vertical">
+							<input type="radio" id="r1" name="question">
+							<label for="r1">
+								<p class="text">С адаптивностью</p>
+								<div class="price">+20%</div>
+							</label>
+						</div>
+						<div class="answer-vertical">
+							<input type="radio" id="r2" name="question">
+							<label for="r2">
+								<p class="text">Без адаптивности</p>
+								<div class="price">+0%</div>
+							</label>
+						</div> -->
+					</div>
+					<a href="#" class="btn">Далее</a>
+				</section>
+			</div>
+		</div>
 		
 		<footer>
 			<div class="container">
@@ -145,7 +172,8 @@
 		
 	</section>
 	
-    <script src="../libs/js/lib.js"></script>
-    <script src="../js/portfolio.js"></script>
+	<script src="../libs/js/lib.js"></script>
+	<script src="../js/portfolio.js"></script>
+	<script src="../js/questions.js"></script>
 </body>
 </html>

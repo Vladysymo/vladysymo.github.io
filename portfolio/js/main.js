@@ -1,19 +1,25 @@
+//Получение элементов
+//Основные элементы
 const menu = _$('.menu-wrapper menu')
 const site = _$('.site')
 const menu2 = _$('.menu')
 const closeMenu = _$('.close-menu')
 
+//Кнопки
 const floatingMenuBtn = _$('.floatingMenuBtn')
 const floatWrapper    = _$('.float_btn')
 const themeBtn        = _$('.theme')
 
+//Дополнительные элементы
 const skillLines = __$('.line')
 const cardAbout  = _$('.site .about .row .card')
 
+//Обработчики событий для кнопок управления меню
 menu.addEventListener('click', openMenu)
 floatingMenuBtn.addEventListener('click', openMenu)
 closeMenu.addEventListener('click', closingMenu)
 
+//Функции открытия и закрытия меню
 function openMenu() {
 	site.classList.add('site-open')
 	menu2.classList.add('open')
@@ -26,11 +32,13 @@ function closingMenu() {
 	themeBtn.classList.remove('open')
 }
 
+//Кнопка темы
 themeBtn.addEventListener('click', ()=>{
 	themeBtn.classList.toggle('open')
 })
 
 
+//Действия при скролле
 site.addEventListener('scroll', ()=>{
 	if (site.scrollTop >= 200) {
 		floatWrapper.classList.add('showed')
@@ -46,7 +54,7 @@ site.addEventListener('scroll', ()=>{
 
 
 
-//jq soft scroll
+//Плавная прокрутка до элемента на jQuery
 let toAbout     = _$('#about').getBoundingClientRect().top
 let toSkills    = _$('#skills').getBoundingClientRect().top
 let toPortfolio = _$('#portfolio').getBoundingClientRect().top
@@ -76,10 +84,3 @@ $('a[href*="#"]').on('click', function(e){
 	closingMenu()
     e.preventDefault();
 })
-
-window.onload = ()=>{
-//	$('.site').scrollTop($(window).height()*2)
-}
-
-
-

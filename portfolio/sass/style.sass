@@ -8,8 +8,7 @@
 	justify-content: center
 	align-items: center
 	
-//main styles sass
-//rgba(0, 0, 0, 0.5)
+//Основные стили для всего сайта
 body
 	perspective: 1000px
 	overflow: hidden
@@ -61,22 +60,9 @@ h6.logo
 	color: #555
 	span
 		color: $button-color
-//стили для сео
-.seo
-	h1
-		position: absolute
-		left: -9999px
-		top: -9999px
-	h2
-		position: absolute
-		left: -9999px
-		top: -9999px
-	p
-		position: absolute
-		left: -9999px
-		top: -9999px
 
 
+//Тема (в меню)
 .theme
 	position: fixed
 	height: 50px
@@ -135,7 +121,7 @@ h6.logo
 			height: 340px
 			opacity: 1
 
-
+//Стили для основного блока сайта
 .site
 	height: 100vh
 	width: 100%
@@ -145,14 +131,12 @@ h6.logo
 	position: relative
 	transition: .5s
 	z-index: 100
-	//transform: rotateY(-20deg)
 	&-open
 		transform: rotateY(-20deg) translateX(100px) scale(.5)
 	
 	header
 		width: 100%
 		background-color: $primary-color
-		//border: 1px solid #000
 		.row
 			height: 200px
 			.menu-wrapper, .title-wrapper, .menu-wrapper-back
@@ -210,7 +194,7 @@ h6.logo
 							transform: rotate(-45deg)
 						&.third
 							transform: rotate(45deg)
-//floating Menu btn
+//Плавающая кнопка
 .float_btn
 	position: fixed
 	width: 100%
@@ -246,6 +230,7 @@ h6.logo
 		&.third
 			bottom: 30%
 
+//Плавающая кнопка на не главных страницах
 .floatingMenuBtnBack
 	height: 50px
 	width: 50px
@@ -282,7 +267,7 @@ h6.logo
 			&.third
 				transform: rotate(45deg)
 
-
+//Меню
 .menu
 	position: fixed
 	width: 50%
@@ -319,8 +304,6 @@ h6.logo
 			height: 70px
 			line-height: 70px
 			width: 240px
-			//transition: all .5s, color .2s
-			//background-color: #000
 			text-align: center
 			text-transform: uppercase
 			transform: translateX(-50vw)
@@ -349,18 +332,17 @@ h6.logo
 				&::before, &::after
 					transform: translateX(0)
 					opacity: 1
-					background-color: $hover-color
-			
-.menu.open
-	z-index: 101
-	a
-		transform: translateX(0)
+					background-color: $hover-color		
+	&.open
+		z-index: 101
+		a
+			transform: translateX(0)
 
-//sections
+//Секции сайта
 .site
 	section
 		width: 100%
-	//main*************************************************************
+	//Главная*************************************************************
 	.main
 		background:
 			color: rgba(139, 195, 74, 0)
@@ -387,7 +369,7 @@ h6.logo
 			text-align: center
 			font-size: $middle-font
 			margin-top: $small-indent
-	//about*************************************************************
+	//Обо мне*************************************************************
 	.about
 		background-color: rgba(0, 0, 0, 0.05)
 		min-height: 100vh
@@ -416,7 +398,7 @@ h6.logo
 					font-size: $font-normal + 2px
 					margin-bottom: $small-indent / 4
 					
-	//skills*************************************************************
+	//Навыки*************************************************************
 	.skills
 		background-color: #fff
 		height: auto
@@ -441,7 +423,6 @@ h6.logo
 					top: 25px - ($middle-font - 5px) / 2
 					left: 25%
 					border-radius: 999px
-					//background-color: lighten($skills-line-color, 50%)
 					@each $number, $color in $skills-line-colors
 						&.n-#{$number}
 							background-color: lighten($color, 40%)
@@ -453,14 +434,7 @@ h6.logo
 						top: 0
 						transition: 1s cubic-bezier(.8, .01, .2, 1)
 						width: 0
-						//background-color: $skills-line-color
-						//border-radius: 5px
 						border-radius: 999px
-						//@for $i from 1 through 7
-							&.n-#{$i}
-								transition-delay: ($i - 1) * 0.2s
-								&::before
-									transition-delay: ($i - 1) * 0.2s
 						@each $number, $color, $font in $skills-line-colors
 							&.n-#{$number}
 								background-color: $color
@@ -470,7 +444,6 @@ h6.logo
 						&::before
 							display: block
 							position: absolute
-							//left: 5px
 							right: 5px
 							top: 0
 							font-size: $middle-font - 10px
@@ -514,7 +487,7 @@ h6.logo
 							width: 85%
 						&.n-8
 							width: 80%
-	//portfolio*************************************************************
+	//Портфолио*************************************************************
 	.portfolio
 		background-color: rgba(0, 0, 0, 0.05)
 		min-height: 100vh
@@ -530,7 +503,6 @@ h6.logo
 				overflow: hidden
 				height: 300px
 				width: 300px
-				//background-color: $skills-line-color
 				margin-bottom: 50px
 				border-radius: 10px
 				cursor: pointer
@@ -564,11 +536,9 @@ h6.logo
 			margin-bottom: 50px
 			&:hover
 				background-position: 200px 0
-	//contacts*************************************************************
+	//Контакты*************************************************************
 	.contacts
 		background-color: rgba(205, 220, 57, 0)
-		//min-height: 100vh
-		//padding-top: $big-indent
 		padding-bottom: $big-indent
 		.row .text
 			p
@@ -663,7 +633,7 @@ h6.logo
 					outline: none
 				&:hover
 					background-position: 250px 0
-	//footer*************************************************************
+	//Футер сайта*************************************************************
 	footer
 		min-height: 50vh
 		background-color: #212121
@@ -715,7 +685,7 @@ h6.logo
 
 
 
-//Works.html
+//Стили для страницы Works.html
 section.works 
 	min-height: 100vh
 	width: 100%
@@ -757,6 +727,7 @@ section.works
 					width: 100%
 					text-align: center
 
+//Всплывающее окно
 .popup_wrapper
 	background-color: rgba(0, 0, 0, 0.5)
 	position: fixed
@@ -786,12 +757,8 @@ section.works
 			bottom: 50px
 		cursor: default
 		.rowz
-			//background-color: #eaa0a0
 			min-height: 50px
 			@extend %center-element
-			//@for $i from 1 through 4
-				&:nth-child(#{$i})
-					background-color: rgba(0, 0, 0, 0.15)
 			p
 				color: rgba(0, 0, 0, 0.3)
 				span
@@ -834,15 +801,164 @@ section.works
 
 
 
-//choosesite.html
+//Стили для страницы Choosesite.html
+.questions
+	//border: 1px solid #000
+	padding-bottom: $big-indent
+	h4
+		margin:
+			top: $small-indent / 2
+			bottom: $small-indent / 3
+		font-size: $big-font - 5px
+		transition: 0.3s
+	p.title
+		width: 100%
+		text-align: center
+		font-size: $middle-font - 5px
+		margin-bottom: $small-indent / 2
+		color: #5C5C5C
+		transition: 0.3s
+	input
+		display: none
+	.answers
+		width: 100%
+		display: flex
+		align-items: center
+		justify-content: space-around
+		opacity: 1
+		transition: 0.3s
+		.answer	
+			margin: 20px
+			height: 400px
+			label
+				background-color: #fff
+				box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.4)
+				border-radius: 10px
+				overflow: hidden
+				display: block
+				cursor: pointer
+				height: 100%
+				width: 100%
+				transition: 0.3s
+				position: relative
+				&:hover
+					box-shadow: 2px 2px 60px rgba(0, 0, 0, 0.4)
+				&::before
+					display: block
+					content: ''
+					position: absolute
+					top: 25%
+					left: -100%
+					width: 100%
+					height: 100px
+					background-color: rgba(255, 255, 255, 0.8)
+					font-size: $big-font + 10px
+					text-align: center
+					line-height: 100px
+					transition: 0.3s
+				&:hover::before
+					left: 0
+				.selected
+					position: absolute
+					height: 100%
+					width: 100%
+					top: 0
+					left: 0
+					right: 0
+					bottom: 0
+					background-color: rgba(255, 255, 255, 0.95)
+					@extend %center-element
+					opacity: 0
+					transition: 0.3s
+					.check
+						height: 200px
+						width: 200px
+						border-radius: 50%
+						background-color: $button-color
+						background-image: $button-gradient-color
+						opacity: 0.9
+						text-align: center
+						i
+							color: #fff
+							font-size: 100px
+							line-height: 200px
+				img
+					width: 100%
+				h5
+					width: 100%
+					text-align: center
+					font-size: $middle-font - 5px
+					margin:
+						top: 10px
+						bottom: 20px
+				p
+					width: 100%
+					text-align: center
+					font-size: $font-normal
+			label[for=r1]::before
+				content: '40$'
+			label[for=r2]::before
+				content: '50$'
+			label[for=r3]::before
+				content: '300$'
+			label[for=r4]::before
+				content: '400$'
+			input:checked + label > .selected
+				opacity: 1
+	.btn
+		$height: 50px
+		margin: 50px auto 0 auto
+		width: 400px
+		height: $height
+		line-height: $height
 
-
-
-
-
-
-
-
+	.answers.vertical
+		flex-direction: column
+		justify-content: center
+		.answer-vertical
+			width: 100%
+			height: 70px
+			//margin-bottom: 10px
+			//background-color: #7A7A7A
+			label
+				position: relative
+				display: block
+				height: 100%
+				width: 100%
+				cursor: pointer
+				transition: 0.3s
+				//&::before
+					content: ''
+					display: block
+					position: absolute
+					bottom: 0
+					height: 1px
+					width: 90%
+					left: 5%
+					background-color: #DBDBDB
+				&::after
+					content: ''
+					display: block
+					position: absolute
+					top: 0
+					height: 1px
+					width: 90%
+					left: 5%
+					background-color: #DBDBDB
+				.text
+					width: 100%
+					line-height: 70px
+					padding-left: 30px
+				.price
+					position: absolute
+					right: 30px
+					top: 50%
+					transform: translateY(-50%)
+			input:checked + label 
+				background-color: $button-color
+				color: #fff
+.questions .hide
+	opacity: 0
 
 
 
