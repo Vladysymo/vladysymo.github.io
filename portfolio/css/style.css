@@ -1253,6 +1253,7 @@ section.works .wrapper .work .text p {
 
 .questions {
   padding-bottom: 160px;
+  transition: 0.3s;
 }
 
 .questions h4 {
@@ -1262,6 +1263,10 @@ section.works .wrapper .work .text p {
   transition: 0.3s;
 }
 
+.questions h4 span.price {
+  color: #2e7d32;
+}
+
 .questions p.title {
   width: 100%;
   text-align: center;
@@ -1269,6 +1274,14 @@ section.works .wrapper .work .text p {
   margin-bottom: 50px;
   color: #5C5C5C;
   transition: 0.3s;
+}
+
+.questions p.description {
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 50px;
+  color: #5C5C5C;
 }
 
 .questions input {

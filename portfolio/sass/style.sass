@@ -803,14 +803,16 @@ section.works
 
 //Стили для страницы Choosesite.html
 .questions
-	//border: 1px solid #000
 	padding-bottom: $big-indent
+	transition: 0.3s
 	h4
 		margin:
 			top: $small-indent / 2
 			bottom: $small-indent / 3
 		font-size: $big-font - 5px
 		transition: 0.3s
+		span.price
+			color: $button-color
 	p.title
 		width: 100%
 		text-align: center
@@ -818,6 +820,12 @@ section.works
 		margin-bottom: $small-indent / 2
 		color: #5C5C5C
 		transition: 0.3s
+	p.description
+		width: 100%
+		text-align: center
+		font-size: $font-normal
+		margin-bottom: $small-indent / 2
+		color: #5C5C5C
 	input
 		display: none
 	.answers
