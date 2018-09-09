@@ -6,7 +6,7 @@ let h4      = allQ.querySelector('h4'),
     answers = allQ.querySelector('.answers'),
     radio   = allQ.querySelectorAll('input[type=radio]')
 
-let next = allQ.querySelector('a.btn')
+let next = allQ.querySelector('a.btn.next')
 
 //Для сохранения данных об опросе
 let Data = {
@@ -51,6 +51,12 @@ errChoose = ()=>{
 finish = ()=>{
 	if ( Data.responsive == true ) Data.price = Data.price * 1.2
 	console.log(JSON.stringify(Data))
+	hide([allQ])
+	setTimeout(()=>{
+		allQ.innerHTML = `<h4>Ваш сайт будет стоить <span class="price">${Data.price}$</span></h4><p class="description bugs">+ - 30$ (За недоработки или недочеты как со стороны разработчика, так и заказчика)</p> <p class="note">*Это стоимость за создание сайта под ключ с миоим дизайном и установкой его на хостинг. Если вы хотите хорший дизайн, то закажите его у <a href="https://vk.com/uctamtangirov.official">дизайнера</a></p><h4 class="contact">Оставьте свои контактные данные, чтобы я смог с вами связаться</h4><div class="container feedback"><div class="row"><div class="col-md-6 feedback__field"><div class="icon skype"></div><input type="text" placeholder="alexya371"></div><div class="col-md-6 feedback__field"><div class="icon discord"></div><input type="text" placeholder="Vladysymo#0826"></div><div class="col-md-6 feedback__field"><div class="icon viber"></div><input type="text" placeholder="+37377823062"></div><div class="col-md-6 feedback__field"><div class="icon telegram"></div><input type="text" placeholder="@vladysymo"></div><div class="col-md-6 feedback__field"><div class="icon mailru"></div><input type="text" placeholder="vladysymo@mail.ru"></div><div class="col-md-6 feedback__field"><div class="icon vk"></div><input type="text" placeholder="vk.com/id2451354564"></div></div></div><a href="#" class="btn send-feedback">Отправить</a>`
+		unhide([allQ])
+		FINISH()
+	}, 300)
 },
 
 addAnswer = (id, text, price)=>{
@@ -70,16 +76,16 @@ changeQuestion = (question)=>{
 	p.innerHTML = question.p
 },
 
-hide = ()=>{
-	answers.classList.add('hide')
-	h4.classList.add('hide')
-	p.classList.add('hide')
+hide = (elems)=>{
+	for (let elem of elems) {
+		elem.classList.add('hide')
+	}
 },
 
-unhide = ()=>{
-	answers.classList.remove('hide')
-	h4.classList.remove('hide')
-	p.classList.remove('hide')
+unhide = (elems)=>{
+	for (let elem of elems) {
+		elem.classList.remove('hide')
+	}
 },
 
 nextQuestion = (questionsWhat)=>{	
@@ -107,10 +113,10 @@ nextQuestion = (questionsWhat)=>{
 		}
 		numberQ++
 		if ( numberQ <= questionsWhat.length ) {
-			hide()
+			hide([answers, p, h4])
 			setTimeout(()=>{
 				changeQuestion(questionsWhat[numberQ-1])
-				unhide()
+				unhide([answers, p, h4])
 			}, 300)
 		} else {
 			finish()

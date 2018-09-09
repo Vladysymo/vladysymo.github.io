@@ -813,6 +813,8 @@ section.works
 		transition: 0.3s
 		span.price
 			color: $button-color
+		&.contact
+			margin-top: $small-indent
 	p.title
 		width: 100%
 		text-align: center
@@ -826,6 +828,16 @@ section.works
 		font-size: $font-normal
 		margin-bottom: $small-indent / 2
 		color: #5C5C5C
+		&.bugs
+			margin-bottom: $small-indent / 4
+	p.note
+		width: 100%
+		text-align: center
+		font-size: $font-normal - 1px
+		margin-bottom: $small-indent / 2
+		color: #5C5C5C
+		a
+			color: $button-color
 	input
 		display: none
 	.answers
@@ -965,10 +977,50 @@ section.works
 			input:checked + label 
 				background-color: $button-color
 				color: #fff
-.questions .hide
+.questions .hide, .questions.hide
 	opacity: 0
 
-
+.feedback
+	&__field
+		height: 50px
+		display: flex
+		align-items: center
+		margin-bottom: 10px
+		padding: 0
+		input
+			max-width: 250px
+			opacity: 1
+			position: relative
+			display: block
+			height: 50px
+			// margin-bottom: 30px
+			font-size: $middle-font
+			outline: none
+			transition: .3s
+			border:
+				top: none
+				left: none
+				right: none
+				bottom: 2px solid #aaa
+			color: $button-color
+			&:focus
+				border-bottom: 2px solid $button-color
+		.icon
+			height: 50px
+			width: 50px
+			border-radius: 50%
+			background-color: #000
+			margin: 0 10px
+		&:nth-child(2n)
+			//background-color: rgba(255, 220, 84, 0.8)
+			justify-content: flex-start
+		&:nth-child(2n+1)
+			//background-color: rgba(115, 255, 84, 0.8)
+			justify-content: flex-end
+			input
+				order: 0
+			.icon
+				order: 1
 
 
 

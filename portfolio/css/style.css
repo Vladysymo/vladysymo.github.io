@@ -1267,6 +1267,10 @@ section.works .wrapper .work .text p {
   color: #2e7d32;
 }
 
+.questions h4.contact {
+  margin-top: 100px;
+}
+
 .questions p.title {
   width: 100%;
   text-align: center;
@@ -1282,6 +1286,22 @@ section.works .wrapper .work .text p {
   font-size: 16px;
   margin-bottom: 50px;
   color: #5C5C5C;
+}
+
+.questions p.description.bugs {
+  margin-bottom: 25px;
+}
+
+.questions p.note {
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+  margin-bottom: 50px;
+  color: #5C5C5C;
+}
+
+.questions p.note a {
+  color: #2e7d32;
 }
 
 .questions input {
@@ -1460,8 +1480,60 @@ section.works .wrapper .work .text p {
   color: #fff;
 }
 
-.questions .hide {
+.questions .hide, .questions.hide {
   opacity: 0;
+}
+
+.feedback__field {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 0;
+}
+
+.feedback__field input {
+  max-width: 250px;
+  opacity: 1;
+  position: relative;
+  display: block;
+  height: 50px;
+  font-size: 24px;
+  outline: none;
+  transition: .3s;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid #aaa;
+  color: #2e7d32;
+}
+
+.feedback__field input:focus {
+  border-bottom: 2px solid #2e7d32;
+}
+
+.feedback__field .icon {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #000;
+  margin: 0 10px;
+}
+
+.feedback__field:nth-child(2n) {
+  justify-content: flex-start;
+}
+
+.feedback__field:nth-child(2n+1) {
+  justify-content: flex-end;
+}
+
+.feedback__field:nth-child(2n+1) input {
+  order: 0;
+}
+
+.feedback__field:nth-child(2n+1) .icon {
+  order: 1;
 }
 
 @media screen and (max-width: 767px) {
