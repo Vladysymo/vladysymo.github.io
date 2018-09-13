@@ -65,6 +65,7 @@ body {
   margin: auto;
   display: block;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
