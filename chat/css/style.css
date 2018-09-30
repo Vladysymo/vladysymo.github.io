@@ -1,0 +1,175 @@
+/*FONTS.CSS*/
+@font-face {
+  font-family: 'Open Sans';
+  src: url(../fonts/OpenSans-Regular.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url(../fonts/OpenSans-Bold.ttf);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url(../fonts/OpenSans-Light.ttf);
+  font-weight: 300;
+}
+
+/*RESET.CSS*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Tahoma', 'Arial', sans-serif;
+  font-size: 16px;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+/*MAIN.CSS*/
+body header.header {
+  height: 100px;
+  background-color: #00BF57;
+  width: 100%;
+}
+
+body header.header .wrapper {
+  max-width: 1170px;
+  height: 100%;
+  margin: auto;
+  position: relative;
+}
+
+body header.header .wrapper .backward {
+  position: absolute;
+  left: 50px;
+  height: 100px;
+  cursor: pointer;
+  top: 0;
+}
+
+body header.header .wrapper .backward i {
+  line-height: 100px;
+  font-size: 70px;
+  color: #ffffff;
+}
+
+body header.header .wrapper .menu {
+  position: absolute;
+  right: 50px;
+  height: 100px;
+  width: 50px;
+  text-align: center;
+  cursor: pointer;
+  top: 0;
+}
+
+body header.header .wrapper .menu i {
+  line-height: 100px;
+  font-size: 40px;
+  color: #ffffff;
+  width: 100%;
+}
+
+body header.header .wrapper .title {
+  height: 100%;
+  margin-left: 100px;
+  display: flex;
+  align-items: center;
+}
+
+body header.header .wrapper .title .avatar {
+  height: 64px;
+  width: 64px;
+  border-radius: 50%;
+  background-color: #fff;
+  cursor: pointer;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+body header.header .wrapper .title .name {
+  font-size: 22px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+body .chat_list {
+  max-width: 1170px;
+  margin: auto;
+  overflow-y: auto;
+  height: calc(100vh - 200px);
+  max-height: calc(100vh - 200px);
+}
+
+body .chat_list .message {
+  height: 100px;
+  max-width: 850px;
+  cursor: pointer;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+body .chat_list .message.my {
+  background-color: #D4D4D4;
+}
+
+body .chat_list .message.nmy {
+  background-color: #F3F3F3;
+  flex-direction: row-reverse;
+  margin-left: 300px;
+}
+
+body footer {
+  width: 100%;
+  height: 100px;
+  background-color: #f0f0f0;
+}
+
+body footer .wrapper {
+  margin: auto;
+  max-width: 1170px;
+}
+
+body footer .wrapper form, body footer .wrapper input, body footer .wrapper button {
+  display: block;
+}
+
+body footer .wrapper form {
+  width: 100%;
+  height: 70px;
+  position: relative;
+}
+
+body footer .wrapper form input {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  outline: none;
+  height: 70px;
+  max-width: 1000px;
+  width: 100%;
+  font-size: 22px;
+}
+
+body footer .wrapper form button {
+  position: absolute;
+  right: 0px;
+  top: 0;
+  height: 70px;
+  width: 70px;
+}

@@ -1,0 +1,120 @@
+@import vars
+@import fonts
+@import reset
+
+//Mixins
+=center($fxd: row)
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: $fxd
+
+=trs($time: .3, $prop: all)
+    transition: #{$prop} #{$time}s 
+
+
+//Main styles
+body
+    header.header
+        height: 100px
+        background-color: #00BF57
+        width: 100%
+        .wrapper
+            max-width: 1170px
+            height: 100%
+            margin: auto
+            position: relative
+            .backward
+                position: absolute
+                left: 50px
+                height: 100px
+                cursor: pointer
+                top: 0
+                i
+                    line-height: 100px
+                    font-size: 70px
+                    color: #ffffff
+            .menu
+                position: absolute
+                right: 50px
+                height: 100px
+                width: 50px
+                text-align: center
+                cursor: pointer
+                top: 0
+                i
+                    line-height: 100px
+                    font-size: 40px
+                    color: #ffffff
+                    width: 100%
+            .title
+                //background-color: rgba(255, 255, 255, 0.267)
+                height: 100%
+                margin-left: 100px
+                display: flex
+                align-items: center
+                .avatar
+                    height: 64px
+                    width: 64px
+                    border-radius: 50%
+                    background-color: #fff
+                    cursor: pointer
+                    margin:
+                        left: 20px
+                        right: 20px
+                .name
+                    font-size: 22px
+                    color: #ffffff
+                    cursor: pointer
+
+    .chat_list
+        max-width: 1170px
+        margin: auto
+        overflow-y: auto
+        height: calc(100vh - 200px)
+        max-height: calc(100vh - 200px)
+        .message
+            height: 100px
+            max-width: 850px
+            cursor: pointer
+            font-size: 22px
+            display: flex
+            align-items: center
+            padding: 20px
+            margin: 
+                top: 10px
+                bottom: 10px
+            &.my
+                background-color: #D4D4D4
+            &.nmy
+                background-color: #F3F3F3
+                flex-direction: row-reverse
+                margin-left: 300px
+                
+    footer
+        width: 100%
+        height: 100px
+        background-color: #f0f0f0
+        .wrapper
+            margin: auto
+            max-width: 1170px
+            form, input, button
+                display: block
+            form
+                width: 100%
+                height: 70px
+                position: relative
+                input
+                    background-color: rgba(0, 0, 0, 0)
+                    border: none
+                    outline: none
+                    height: 70px
+                    max-width: 1000px
+                    width: 100%
+                    font-size: 22px
+                button
+                    position: absolute
+                    right: 0px
+                    top: 0
+                    height: 70px
+                    width: 70px
