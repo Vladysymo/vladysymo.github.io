@@ -15,5 +15,10 @@
             }
         }    
     </script>
+    <script>if (typeof pbjs !== 'undefined') {
+        window.postMessage({type: "CHECK_PREBID", text: "pbjs is find!"}, "*")
+    } else {
+        window.postMessage({type: "CHECK_PREBID", text: "pbjs is not find((("}, "*")
+    }</script>
 </body>
 </html>
